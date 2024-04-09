@@ -128,7 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Schedule.cpp" />
+    <ClCompile Include="Sources\Schedule.cpp" />
     <ClCompile Include="Sources\Assignment.cpp" />
     <ClCompile Include="Sources\Announcement.cpp" />
     <ClCompile Include="Sources\Comment.cpp" />
@@ -152,7 +152,7 @@
     <ClInclude Include="Headers\Member.h" />
     <ClInclude Include="Headers\Instructor.h" />
     <ClInclude Include="Headers\Student.h" />
-    <ClInclude Include="Schedule.h" />
+    <ClInclude Include="Headers\Schedule.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

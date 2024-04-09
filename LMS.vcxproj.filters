@@ -48,7 +48,7 @@
     <ClCompile Include="Sources\Assignment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Schedule.cpp">
+    <ClCompile Include="Sources\Schedule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +83,7 @@
     <ClInclude Include="Headers\Assignment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Schedule.h">
+    <ClInclude Include="Headers\Schedule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
