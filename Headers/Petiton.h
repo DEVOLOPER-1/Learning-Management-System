@@ -34,6 +34,6 @@ public:
 	string getTitle();
 	string getContent();
 	void display(Dean, Student);
-	void decide
+	void decide();
 };
 

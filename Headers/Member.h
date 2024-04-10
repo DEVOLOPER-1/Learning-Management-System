@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 using namespace std;
 
@@ -16,11 +17,11 @@ private:
 
 public:
 	// Seters................................................
-	void setName(string N);
-	void setSex(char s);
-	void setNational_ID(string id);
-	void setMail(string email);
-	void setRole(string role);
+	void setName(string);
+	void setSex(char);
+	void setNational_ID(string);
+	void setMail(string);
+	void setRole(string);
 
 	// Geters................................................
 	string getName() const;
