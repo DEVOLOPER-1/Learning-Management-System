@@ -4,6 +4,7 @@
 #include "Classroom.h"
 #include "Assignment.h"
 #include "Course.h"
+#include "Dashboard.h"
 /*
 - year: int
 - registered: vector<Classroom>
@@ -23,7 +24,7 @@ private:
 	vector<Assignment> assignments;
 	Classroom openClassroom(Classroom);
 public:
-	void openDashboard(string Dashboard); //we will replace the parameter by a Dahboard Class
+	void openDashboard(Dashboard);
 	void registerCourse(Course);
 };
 

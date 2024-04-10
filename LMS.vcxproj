@@ -128,6 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Meeting.cpp" />
+    <ClCompile Include="Sources\List.cpp" />
     <ClCompile Include="Sources\Dashboard.cpp" />
     <ClCompile Include="Sources\Petiton.cpp" />
     <ClCompile Include="Sources\Schedule.cpp" />
@@ -157,6 +159,8 @@
     <ClInclude Include="Headers\Student.h" />
     <ClInclude Include="Headers\Schedule.h" />
     <ClInclude Include="Headers\Petiton.h" />
+    <ClInclude Include="Headers\List.h" />
+    <ClInclude Include="Headers\Meeting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

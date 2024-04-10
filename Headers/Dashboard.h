@@ -4,22 +4,9 @@
 #include "Classroom.h"
 #include "Petiton.h"
 #include "Schedule.h"
+#include "Meeting.h"
+#include "List.h"
 using namespace std;
-
-/*
-- Petitions: vector <Petition>
-- Classroms: vector <Classrom>
-- Studentshedule: Shedule
-- Meetings: vector <Meeting>
-- TodoList: vector <List>
-+addPetition(petition: Petition)
-+addClassroom(classroom:Classroom)
-+addMeeting(meeting_Meeting)
-+addTodoList(todo_list: List)
-+setSchedule(sch: Schedule):
-+getSchedule():Schedule
-+display()
-*/
 
 class Dashboard
 {
@@ -28,6 +15,15 @@ private:
 	vector<Classroom> Classrooms;
 	Schedule StudentSchedule;
 	vector<Meeting> Meetings;
+	vector<List> TodoList;
 
+public:
+	void addPetition(Petiton);
+	void addClassroom(Classroom);
+	void addMeeting(Meeting);
+	void addTodoList(List);
+	void setSchedule(Schedule);
+	void display();
+	Schedule getSchedule();
 };
 
