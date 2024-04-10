@@ -1,32 +1,33 @@
-#pragma once
 #include <iostream>
 using namespace std;
 
 class Member
 {
 private:
-	string Name;
+	// Variables..............................................
+	string Name, NationalID, Uni_ID, Mail, Role;
 	char Sex;
-	string NationalID;
 	short int Age;
-	string Mail;
-	string Role;
-	static int counter;
-	void generateUniID();
-	int calcAge();
+	static int Counter;
+
+	// Private Functions......................................
+	void generateUni_ID();
+	void calcAge();
 
 public:
-	void setName(string);
-	void setSex(char);
-	void setNational_ID(string);
-	void setMail(string);
-	void setRole(string);
-	string getName();
-	char getSex();
-	string getMail();
-	string getNationalID();
-	string getRole();
-	string get_uniID();
-	string roleAssignment();
-};
+	// Seters................................................
+	void setName(string N);
+	void setSex(char s);
+	void setNational_ID(string id);
+	void setMail(string email);
+	void setRole(string role);
 
+	// Geters................................................
+	string getName() const;
+	string getMail() const;
+	string getNational_ID() const;
+	string getRole() const;
+	string getUni_ID() const;
+	char getSex() const;
+	short int getAge() const;
+};
