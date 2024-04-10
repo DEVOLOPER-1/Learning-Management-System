@@ -8,12 +8,15 @@
 
 class Classroom
 {
+private:
 	string course_ID;
 	vector<string> materials;
 	vector<Student> students;
 	vector<Instructor> instructors;
 	vector<Announcement> announcements;
 	vector<Assignment> assignments;
+
+public:
 	void setID(string);
 	void setMaterial(string);
 	void setStudent();

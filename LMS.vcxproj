@@ -128,6 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Dashboard.cpp" />
+    <ClCompile Include="Sources\Petiton.cpp" />
     <ClCompile Include="Sources\Schedule.cpp" />
     <ClCompile Include="Sources\Assignment.cpp" />
     <ClCompile Include="Sources\Announcement.cpp" />
@@ -142,6 +144,7 @@
     <ClCompile Include="Sources\Student.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\Dashboard.h" />
     <ClInclude Include="Headers\Assignment.h" />
     <ClInclude Include="Headers\Announcement.h" />
     <ClInclude Include="Headers\Comment.h" />
@@ -153,6 +156,7 @@
     <ClInclude Include="Headers\Instructor.h" />
     <ClInclude Include="Headers\Student.h" />
     <ClInclude Include="Headers\Schedule.h" />
+    <ClInclude Include="Headers\Petiton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
