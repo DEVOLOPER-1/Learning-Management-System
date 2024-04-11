@@ -15,11 +15,13 @@ private:
 	void calcAge();
 
 public:
+	// Constructors
+	Member();
 	// Seters................................................
 	void setName(string N);
 	void setSex(char s);
 	void setNational_ID(string id);
-	void setMail(string email);
+	void setMail(string email, string Match);
 	void setRole(string role);
 
 	// Geters................................................
@@ -30,4 +32,5 @@ public:
 	string getUni_ID() const;
 	char getSex() const;
 	short int getAge() const;
+	void display() const;
 };
