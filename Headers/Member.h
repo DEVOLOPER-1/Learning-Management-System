@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 using namespace std;
 
@@ -23,6 +24,11 @@ public:
 	void setNational_ID(string id);
 	void setMail(string email, string Match);
 	void setRole(string role);
+	void setName(string);
+	void setSex(char);
+	void setNational_ID(string);
+	void setMail(string);
+	void setRole(string);
 
 	// Geters................................................
 	string getName() const;

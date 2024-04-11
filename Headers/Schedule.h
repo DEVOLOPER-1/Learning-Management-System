@@ -1,17 +1,18 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <string>
-/*
-- DayArr: const string[7]
-- CourseName: vector <string>
-- Time: vector <string>
-- Place: vector <string>
-+ Schedule()
-+ Schedule(student_courses_vctr: vector <Course>)
-+ display()
-	*/
+#include "Course.h"
+using namespace std;
+
 class Schedule
 {
+private:
+	const string DayArr[7];
+	vector <string> CourseName, Time, Place;
+
+public:
+	Schedule();
+	Schedule(vector <Course>);
+	void dispaly();
 };
 
