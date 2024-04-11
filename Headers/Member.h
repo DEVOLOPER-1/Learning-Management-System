@@ -19,11 +19,11 @@ public:
 	// Constructors
 	Member();
 	// Seters................................................
-	void setName(string N);
-	void setSex(char s);
-	void setNational_ID(string id);
-	void setMail(string email, string Match);
-	void setRole(string role);
+	void setName(string);
+	void setSex(char);
+	void setNational_ID(string);
+	void setMail(string, string);
+	void setRole(string );
 	void setName(string);
 	void setSex(char);
 	void setNational_ID(string);
