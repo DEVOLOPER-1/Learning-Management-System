@@ -1,12 +1,27 @@
 #include<iostream>
 #include "Petiton.h"
 #include <string>
-
 using namespace std;
 //Constructor
 
 
 //Setter Methods
+
+void Petition::setStatus(string statu){
+    string statu[]{"Pending","Done"};
+    for (string s : statu) {
+        if (s == statu) {
+            status = statu;
+        }else{cout<<"The Status is Neither 'Pending' Nor 'Done' "}
+    }
+}
+
+
+
+
+
+
+
 void Petition::setTitle(string Titl){
     int len_title = Titl.length;
     int iterator{0};
