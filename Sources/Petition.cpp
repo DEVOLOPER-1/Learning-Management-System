@@ -7,17 +7,16 @@ using namespace std;
 
 //Setter Methods
 
-void Petition::setStatus(string statu){
+void Petition::setStatus(){
     string statu[]{"Pending","Done"};
-    for (string s : statu) {
-        if (s == statu) {
-            status = statu;
-        }
-        else{cout<<"The Status is Neither 'Pending' Nor 'Done' "}
+    bool seen{false};
+    if (seen == false) {
+        status = statu[0];
+    }
     }}
 
 
-void Petition::checkSatus(string approve[]{"Approved","Not Approved"}){
+void Petition::checkSatus(){
     
     if (isApproved == approve[0]) {
         cout<<isApproved<<endl;}
