@@ -8,12 +8,12 @@ using namespace std;
 //Setter Methods
 
 void Petition::setStatus(){
-    string statu[]{"Pending","Done"};
+    string statu_array[]{"Pending","Done"};
     bool seen{false};
     if (seen == false) {
-        status = statu[0];
+        status = statu_array[0];
     }
-    }}
+    }
 
 
 void Petition::checkSatus(){
