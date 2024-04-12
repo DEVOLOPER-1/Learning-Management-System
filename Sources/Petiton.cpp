@@ -12,12 +12,19 @@ void Petition::setStatus(string statu){
     for (string s : statu) {
         if (s == statu) {
             status = statu;
-        }else{cout<<"The Status is Neither 'Pending' Nor 'Done' "}
-    }
+        }
+        else{cout<<"The Status is Neither 'Pending' Nor 'Done' "}
+    }}
+
+
+void Petition::checkSatus(string approve[]{"Approved","Not Approved"}){
+    
+    if (isApproved == approve[0]) {
+        cout<<isApproved<<endl;}
+    if (isApproved == approve[1]) {
+        cout<<isApproved<<endl;}
+    else{cout<<"Neither 'Approved' nor 'Not Approved' "}
 }
-
-
-
 
 
 
