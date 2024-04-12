@@ -1,5 +1,5 @@
 #include<iostream>
-#include "Petiton.h"
+#include "Petition.h"
 #include <string>
 using namespace std;
 //Constructor
@@ -23,6 +23,7 @@ void Petition::checkSatus(string approve[]{"Approved","Not Approved"}){
         cout<<isApproved<<endl;}
     if (isApproved == approve[1]) {
         cout<<isApproved<<endl;}
+
     else{cout<<"Neither 'Approved' nor 'Not Approved' "}
 }
 
@@ -30,11 +31,11 @@ void Petition::checkSatus(string approve[]{"Approved","Not Approved"}){
 
 
 void Petition::setTitle(string Titl){
-    int len_title = Titl.length;
+    int len_title = Titl.length; // Titl.length; => Titl.length();
     int iterator{0};
     numofspaces{0};
     if(len_title == 0){cout<<"Please Enter Title Correctly !!"}
-    for (; iterator<len_title; iterator++){
+    for (; iterator < len_title; iterator++){
         if (Titl[iterator] == " ") {
             numofspaces+=1
         }}
