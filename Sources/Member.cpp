@@ -33,8 +33,10 @@ void Member::setMail(string email, string match = "zewailcity")
 
 void Member::setNational_ID(string id)
 {
-    if (size(id) == 15)
+    if (size(id) == 15 && (id[0] == 3 || id[0] == 2) )
         NationalID = id;
+    else
+        cout << "Invalid ID number! Please recheck your input. " <<endl;
 }
 
 void Member::setRole(string role)
@@ -94,3 +96,39 @@ void Member::display() const
     cout << string(80, '_') << endl
          << endl;
 }
+
+// Other functions
+#include <ctime>
+#include <cstdlib>
+void Member::calcAge()
+{
+    time_t current;
+    
+    time(&current);
+    struct tm* tmStruct = localtime(&current);
+
+    int currYear = (tmStruct -> tm_year) + 1900;
+    
+    string idChar = NationalID.substr(1, 2);
+    
+    int brthYear{0};
+    
+    if (NationalID[0] == '3')
+    {
+        if (idChar[0] == '0')
+        {brthYear = 2000 + idChar[1] - '0' ;}
+        else
+        {brthYear = 2000 + atoi(&idChar[0]);}        //couldn't cast two charcters integer from scratch
+    }
+
+    else
+    {
+        if (idChar[0] == '0')
+        {brthYear = 1900 + idChar[1] - '0' ;}
+        else
+        {brthYear = 1900 + atoi(&idChar[0]);}        //couldn't cast two charcters integer from scratch
+    }
+
+    Age = currYear - brthYear;
+}
+
