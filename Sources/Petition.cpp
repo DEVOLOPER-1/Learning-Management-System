@@ -46,7 +46,7 @@ void Petition::setTitle(string Titl){
 
 
 void Petition::setContent(string Conten) {
-    int len_content = Conten.length;
+    int len_content = Conten.length();
     int iterator{0};
     numofspaces{0};
     if(len_content == 0){cout<<"Please Enter Content Correctly !!"}
@@ -54,7 +54,7 @@ void Petition::setContent(string Conten) {
         if (Conten[iterator] == " ") {
             numofspaces+=1
         }}
-    if (numofspaces < 10) {
+    if (numofspaces < 9) {
         cout<<"Please Enter 10 words at least for the Content don't describe it briefly !!"}
     
     else {Content = Conten}}
