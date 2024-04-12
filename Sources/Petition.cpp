@@ -30,7 +30,7 @@ void Petition::checkSatus(){
 
 
 void Petition::setTitle(string Titl){
-    int len_title = Titl.length; // Titl.length; => Titl.length();
+    int len_title = Titl.length(); // Titl.length; => Titl.length();
     int iterator{0};
     numofspaces{0};
     if(len_title == 0){cout<<"Please Enter Title Correctly !!"}
