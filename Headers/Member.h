@@ -9,25 +9,25 @@ private:
 	string Name, NationalID, Uni_ID, Mail, Role;
 	char Sex;
 	short int Age;
-	static int Counter;
+	static long int Counter;
 
 	// Private Functions......................................
 	void generateUni_ID();
 	void calcAge();
-
+	void generateMail();
+	
 public:
 	// Constructors
 	Member();
+	Member(string,char,string, string);
 	// Seters................................................
 	void setName(string);
 	void setSex(char);
 	void setNational_ID(string);
-	void setMail(string, string);
 	void setRole(string );
 	void setName(string);
 	void setSex(char);
 	void setNational_ID(string);
-	void setMail(string);
 	void setRole(string);
 
 	// Geters................................................

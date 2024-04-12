@@ -4,7 +4,17 @@ using namespace std;
 #include "Member.h"
 
 // constructor
-
+Member::Member(): Age(0) {Counter += 1;}
+Member::Member(string name, char s, string role, string nationalID)
+{
+    Counter += 1;
+    setName(name);
+    setRole(role);
+    setNational_ID(nationalID);
+    calcAge();
+    generateUni_ID();
+    generateMail();
+}
 
 // Seteres
 void Member::setName(string N)
@@ -19,16 +29,12 @@ void Member::setName(string N)
     else {cout << "Sorry! Enter your quadratic name " << endl;}
 }
 
-void Member::setMail(string email, string match = "zewailcity")
+void Member::generateMail()
 {
-    const string Match = "zewailcity";
-    int ind = email.find('@');
-    
-    string dom = email.substr(ind+1, size(match));
-    if (dom == match)
-        Mail = email;
-    else 
-        cout << "Invalid E-mail! Please enter your universty mail. ";
+    string mail = "";
+    mail+=Uni_ID;
+    mail+="@zewailcity.edu.eg";
+    Mail = mail;
 }
 
 void Member::setNational_ID(string id)
@@ -39,12 +45,19 @@ void Member::setNational_ID(string id)
         cout << "Invalid ID number! Please recheck your input. " <<endl;
 }
 
+#include <cctype>
 void Member::setRole(string role)
 {
-    string roles[4] = {"Instructor", "TA", "Student", "Dean"};
+    string roles[4] = {"instructor", "ta", "student", "dean"};
+    // lowering the input
+    for (int i; i < size(role); i++)
+    {
+        role[i] = /* cctype function*/tolower(role[i]);
+    }                                                 
+    
     for (string r: roles)
     {
-        if (r == role)                 // seasrch for capitalize and lower 
+        if (r == role)                  
             Role = role;
             return;
     }
@@ -132,3 +145,26 @@ void Member::calcAge()
     Age = currYear - brthYear;
 }
 
+#include <string.h>
+void Member::generateUni_ID()
+{
+    string id;
+    if (Role == "student")
+    {
+        id += "std";
+    }
+    else if (Role == "instructor")
+    {
+        id += "ins";
+    }
+    else if (Role == "ta")
+    {
+        id += "ta";
+    }
+    else
+    {
+        id += "den";
+    }
+    id += Counter;
+    Uni_ID = id;
+}
