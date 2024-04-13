@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Student.h"
 #include "Dean.h"
+#include "Member.h"
 using namespace std;
 
 /*
@@ -35,5 +36,6 @@ public:
 	string getContent();
 	void display(Dean, Student);
 	void decide();
+    friend class Member;
 };
 

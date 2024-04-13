@@ -1,5 +1,6 @@
 #include<iostream>
 #include "Petition.h"
+#include "Member.h"
 #include <string>
 using namespace std;
 //Constructor
@@ -12,6 +13,9 @@ void Petition::setStatus(){
     bool seen{false};
     if (seen == false) {
         status = statu_array[0];
+    }
+    if (seen == true) {
+        status = statu_array[1];
     }
     }
 
@@ -58,6 +62,14 @@ void Petition::setContent(string Conten) {
         cout<<"Please Enter 10 words at least for the Content don't describe it briefly !!"}
     
     else {Content = Conten}}
+
+
+void Petition::decide(setRole check_member_role,){
+    if (check_member_role.Role == "dean") {
+        setStatus();
+        bool seen == true;
+    }}
+
 
 
 //Getter Methods

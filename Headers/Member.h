@@ -38,5 +38,9 @@ public:
 	string getUni_ID() const;
 	char getSex() const;
 	short int getAge() const;
-	void display() const;
+    void display() const;
+    
+    
+  // Friends.........................................
+    friend class Petiton; //The friend relationship is made by youssef and it's to access the the role string and if it's a dean the petition status will be changed upon it.
 };
