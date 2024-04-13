@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 #include <string>
-
+#include <vector>
 //Constructors
 
 
@@ -44,12 +44,14 @@ void Course::setInstructor(string Instructor_name){
         else{instructor = Instructor_name ;}
     }
 
-void Course::setCode(vector course_code){
+void Course::setCode(vector<string>course_code){
     unsigned int num_of_courses{0};
+    string temp_course_code;
     cout<<"Enter No. of Course codes you will enter"; cin>>num_of_courses;
-    
-    
-    
+    for(int iterator{0}; iterator<num_of_courses;iterator++){
+        cout<<"Enter Course Code : "; cin>>temp_course_code;
+        course_code.push_back(temp_course_code);
+    }
 }
 
 
