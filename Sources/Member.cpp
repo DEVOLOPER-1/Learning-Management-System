@@ -11,9 +11,9 @@ Member::Member(string name, char s, string role, string nationalID)
     setName(name);
     setRole(role);
     setNational_ID(nationalID);
-    calcAge();
-    generateUni_ID();
-    generateMail();
+    // calcAge();                 // done inside the setNational_ID to avoid stale data
+    // generateUni_ID();
+    // generateMail();
 }
 
 // Seteres
@@ -39,8 +39,12 @@ void Member::generateMail()
 
 void Member::setNational_ID(string id)
 {
-    if (size(id) == 15 && (id[0] == 3 || id[0] == 2) )
+    if (size(id) == 15 && (id[0] == 3 || id[0] == 2) ){
         NationalID = id;
+        generateUni_ID();          // avoiding stale data 
+        generateMail();
+        calcAge();
+    }
     else
         cout << "Invalid ID number! Please recheck your input. " <<endl;
 }
@@ -57,9 +61,12 @@ void Member::setRole(string role)
     
     for (string r: roles)
     {
-        if (r == role)                  
+        if (r == role){                  
             Role = role;
+            generateMail();
+            generateUni_ID();
             return;
+        }
     }
     cout << "Please enter one of the following values:\n" << "'Instructor', 'TA', 'Student', 'Dean'";
     cout <<endl;
