@@ -14,7 +14,7 @@ using namespace std;
 
 //Setter Methods
 
-void Petition::setStatus(){
+void Petition::setStatus(bool seen){
     string statu_array[]{"Pending","Done"};
     bool seen{false};
     if (seen == false) {
@@ -27,13 +27,13 @@ void Petition::setStatus(){
 
 
 void Petition::checkSatus(){
-    
+    string approve[] {"Yes","No"};
     if (isApproved == approve[0]) {
-        cout<<isApproved<<endl;}
+        cout<<isApproved<<endl;} 
     if (isApproved == approve[1]) {
         cout<<isApproved<<endl;}
 
-    else{cout<<"Neither 'Approved' nor 'Not Approved' "}
+    else{cout<<"Neither 'Approved' nor 'Not Approved' ";}
 }
 
 
@@ -45,11 +45,11 @@ void Petition::setTitle(string Titl){
     int numofspaces{0};
     if(len_title == 0){cout<<"Please Enter Title Correctly !!";}
     for (; iterator < len_title; iterator++){
-        if (Titl[iterator] == " ") {
+        if (Titl[iterator] == ' ') {
             numofspaces+=1;
         }}
     if (numofspaces < 2) {
-        cout<<"Please Enter 3 words at least for the Title !!"}
+        cout<<"Please Enter 3 words at least for the Title !!";}
     
     else {Title = Titl ;}
 }
@@ -58,22 +58,24 @@ void Petition::setTitle(string Titl){
 void Petition::setContent(string Conten) {
     int len_content = Conten.length();
     int iterator{0};
-    numofspaces{0};
-    if(len_content == 0){cout<<"Please Enter Content Correctly !!"}
+    int numofspaces{0};
+    if(len_content == 0){cout<<"Please Enter Content Correctly !!";}
     for (; iterator<len_content; iterator++){
-        if (Conten[iterator] == " ") {
-            numofspaces+=1
+        if (Conten[iterator] == ' ') {
+            numofspaces+=1;
         }}
     if (numofspaces < 9) {
-        cout<<"Please Enter 10 words at least for the Content don't describe it briefly !!"}
+        cout<<"Please Enter 10 words at least for the Content don't describe it briefly !!";}
     
-    else {Content = Conten}}
+    else {Content = Conten ;}}
 
 
-void Petition::decide(setRole check_member_role,){
+
+void Petition::decide(Member& check_member_role){
+    bool seen ;
     if (check_member_role.Role == "dean") {
-        setStatus();
-        bool seen == true;
+        setStatus(seen == true);
+        //bool seen == true;
     }}
 
 

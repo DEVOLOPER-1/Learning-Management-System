@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "Instructor.h"
-
 class Course
 {
 private:

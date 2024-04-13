@@ -19,11 +19,11 @@ void Course::setTitle(string title){
     int numofspaces{0};
     if(len_title == 0){cout<<"Please Enter Title Correctly !!";}
     for (; iterator < len_title; iterator++){
-        if (title[iterator] == " ") {
+        if (title[iterator] == ' ' ) {
             numofspaces+=1;
         }}
     if (numofspaces < 1) {
-        cout<<"Please Enter 2 words at least for the Title !!"}
+        cout<<"Please Enter 2 words at least for the Title !!";}
     
     else {Title = title;}
 }
@@ -36,11 +36,11 @@ void Course::setInstructor(string Instructor_name){
         cout<<"Invalid , Enter the name correctly ";
     }
     for (; iterator<len_name; iterator++) {
-        if(Instructor_name[iterator] == " "){
+        if(Instructor_name[iterator] == ' ' ){
             num_of_spaces += 1;
         }}
         if (num_of_spaces < 1) {
-            cout<<"Please Enter The first and second name at least !!"}
+            cout<<"Please Enter The first and second name at least !!";}
         else{instructor = Instructor_name ;}
     }
 
@@ -64,8 +64,8 @@ void Course::setPrerequisete(vector<string>prerequisetes,vector<string> Code){
 void Course::CreditHours(int CreditHours,vector<string> Code){
     int *array{ new int[Code.size()]};
     for(int iterator{0}; iterator<Code.size();iterator++){
-        cout<<"Enter Credit Hours : ";  cout<<Code[iterator]<<" "; cin>>array[iterator] };
+        cout<<"Enter Credit Hours : ";  cout<<Code[iterator]<<" "; cin>>array[iterator]; }
 }
 
 //Getters
-string getTitle(return Title;)
+string getTitle(return  Title);
