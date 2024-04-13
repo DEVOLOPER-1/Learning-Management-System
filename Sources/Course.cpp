@@ -51,7 +51,20 @@ void Course::setCode(vector<string>course_code){
     for(int iterator{0}; iterator<num_of_courses;iterator++){
         cout<<"Enter Course Code : "; cin>>temp_course_code;
         course_code.push_back(temp_course_code);
+    } vector<string> Code = course_code;
     }
+void Course::setPrerequisete(vector<string>prerequisetes,vector<string> Code){
+    prerequisete_length = Code.size()
+    string temp_prerequisete;
+    for(int iterator{0}; iterator<prerequisete_length;iterator++){
+        cout<<"Enter Prerequisete : if there's no prerequisete enter 'nan'\n"; cout<<Code[iterator]<<" "; cin>>temp_prerequisete;
+        prerequisetes.push_back(temp_prerequisete);
+    }Prerequisete = prerequisetes;
+    }
+void Course::CreditHours(int CreditHours,vector<string> Code){
+    int *array{ new int[Code.size()]};
+    for(int iterator{0}; iterator<Code.size();iterator++){
+        cout<<"Enter Credit Hours : "; cin>>array[iterator]{  } };
 }
 
 //Getters

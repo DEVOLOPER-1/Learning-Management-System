@@ -7,8 +7,8 @@ class Course
 private:
 	string Title;
 	string instructor;
-	string Code;
-	string Prerequisete;
+	vector<string> Code;
+	vector<string> Prerequisete;
 	int CreditHours;
 	int Section;
 	string TimeSlot;
@@ -17,8 +17,8 @@ private:
 public:
 	void setTitle(string);
 	void setInstructor(string);
-	void setCode(string);
-	void setPrerequisete(string);
+	void setCode(vector <string>);
+	void setPrerequisete(vector<string>);
 	void setCreditHours(int);
 	void setSection(int);
 	void setPlace(string);
