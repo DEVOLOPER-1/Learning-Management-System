@@ -4,8 +4,17 @@ using namespace std;
 #include "Member.h"
 
 // constructor
-Member::Member(): Age(0) {Counter += 1;}
-Member::Member(string name, char s, string role, string nationalID)
+Member::Member() {
+    Counter += 1;
+    Name = "";
+    Sex = NULL;
+    Role = "";
+    NationalID = "";
+    Uni_ID = "";
+    Age = 0;
+    Mail = "";
+}
+Member::Member(string name, char s, string role, string nationalID) : Age(0)
 {
     Counter += 1;
     setName(name);
