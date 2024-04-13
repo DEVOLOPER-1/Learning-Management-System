@@ -51,14 +51,21 @@ int main()
     // cout <<endl;
 
 //__________________________________________________________________________________________________________________
-    string Role = "student";
-    string id;
-    long int Counter = 2;
-    if (Role == "student")
-    {
-        id += "std";
-        id += to_string(Counter);
-    }
-    cout << id << endl;
+    // string Role = "student";
+    // string id;
+    // long int Counter = 2;
+    // if (Role == "student")
+    // {
+    //     id += "std";
+    //     id += to_string(Counter);
+    // }
+    // cout << id << endl;
+
+    time_t current;
+    
+    time(&current);
+    struct tm* tmStruct = localtime(&current);
+
+    cout << tmStruct ->tm_min <<endl;
 }
 #include <string.h>

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "Classroom.h"
-#include "Petiton.h"
+#include "Petition.h"
 #include "Schedule.h"
 #include "Meeting.h"
 #include "List.h"

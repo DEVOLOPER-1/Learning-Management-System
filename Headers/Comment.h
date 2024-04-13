@@ -7,17 +7,17 @@
 class Comment
 {
 private:
-	string comment;
+	string Comment;
 	string Date;
 	vector <Comment> Replies;
 	bool isPrivate;
 	void CheckPrivate();
 public:
-	void setContext(string);
+	void setComment(string);
 	void reply(Comment);
 	vector <Comment> getReplies();
-	string getMessage();
-	string getDate();
-	void display(Student*, Instructor*, int, int);
+	string getComment() const;
+	string getDate() const;
+	void display(Student*, Instructor*, int, int) const;
 };
 

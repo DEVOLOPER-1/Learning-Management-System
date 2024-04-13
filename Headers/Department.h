@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include <vector>
-#include "instructor.h"
+#include "Instructor.h"
 #include "Dean.h"
 using namespace std;
 
