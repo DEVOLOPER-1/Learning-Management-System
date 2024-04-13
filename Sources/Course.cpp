@@ -102,7 +102,20 @@ void Course::setDay(vector<string> Dayvector , vector<string> Code){
         { cout<<"Invalid Entry"; break;} }
     vector<string> Day = Dayvector;}
 
+void Course::setTime(vector<string> Timevector , vector <string> Code){
+int len_of_classes_vector = Code.size();
+string time[7]{"12.00PM"};
+string time_sample {"12.00PM"};
+cout<<"You will have to enter 7 slots to express the time from left to right like the following  "<<time_sample<<endl;
 
+ for (int iterator0 = 0; iterator0 < len_of_classes_vector; iterator0++){
+        for (int time_index{0}; time_index < 7; time_index++){
+    cout<<time[time_index]<<time[time_index+1]<<endl;
+    cout<<"Enter slot with index "<<time_index+1<<" "; cin>>time[time_index];} 
+    Timevector.push_back(time[iterator0]);
+}
+TimeSlot = Timevector;
+}
 
 
 

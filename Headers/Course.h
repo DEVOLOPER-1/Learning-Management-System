@@ -10,7 +10,7 @@ private:
 	vector<string> Prerequisete;
 	int CreditHours;
 	vector<int> Section;
-	string TimeSlot;
+	vector <string> TimeSlot;
 	string Day;
 	vector<string> Place;
 public:
@@ -22,7 +22,7 @@ public:
     void setCreditHours(unsigned int section,vector<string> Code);
 	void setSection(vector <int> section,vector<string> Code);
 	void setPlace(vector <string> Placevector,vector<string> Code);
-	void setTime(string);
+	void setTime(vector<string> Timevector , vector <string> Code);
 	void setDay(vector<string> Dayvector , vector<string> Code);
 	string getTitle();
 	Instructor getInstructor();
