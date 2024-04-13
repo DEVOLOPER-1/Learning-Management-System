@@ -18,10 +18,10 @@ void Petition::setStatus(){
     string statu_array[]{"Pending","Done"};
     bool seen{false};
     if (seen == false) {
-        status = statu_array[0];
+        string status = statu_array[0];
     }
     if (seen == true) {
-        status = statu_array[1];
+       string status = statu_array[1];
     }
     }
 
@@ -43,10 +43,10 @@ void Petition::setTitle(string Titl){
     int len_title = Titl.length(); // Titl.length; => Titl.length();
     int iterator{0};
     numofspaces{0};
-    if(len_title == 0){cout<<"Please Enter Title Correctly !!"}
+    if(len_title == 0){cout<<"Please Enter Title Correctly !!";}
     for (; iterator < len_title; iterator++){
         if (Titl[iterator] == " ") {
-            numofspaces+=1
+            numofspaces+=1;
         }}
     if (numofspaces < 2) {
         cout<<"Please Enter 3 words at least for the Title !!"}

@@ -18,10 +18,10 @@
             "name": "linux-g++-x64",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/../**"
+                "${workspaceFolder}/..**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/g++-11",
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "c23",
             "cppStandard": "c++23",
             "intelliSenseMode": "linux-gcc-x64"

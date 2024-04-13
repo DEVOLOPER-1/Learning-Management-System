@@ -18,8 +18,9 @@ public:
 	void setTitle(string);
 	void setInstructor(string);
 	void setCode(vector <string>);
-	void setPrerequisete(vector<string>);
-	void setCreditHours(int);
+    void CreditHours(int CreditHours, vector<string> Code);
+    void Course::setPrerequisete(vector<string>prerequisetes,vector<string> Code);
+    void setCreditHours(int);
 	void setSection(int);
 	void setPlace(string);
 	void setTime(string);

@@ -6,7 +6,7 @@ using namespace std;
 //Constructors
 
 
-
+//Control + shift + P
 
 
 
@@ -16,16 +16,16 @@ using namespace std;
 void Course::setTitle(string title){
     int len_title = title.length();
     int iterator{0};
-    numofspaces{0};
-    if(len_title == 0){cout<<"Please Enter Title Correctly !!"}
+    int numofspaces{0};
+    if(len_title == 0){cout<<"Please Enter Title Correctly !!";}
     for (; iterator < len_title; iterator++){
-        if (Titl[iterator] == " ") {
-            numofspaces+=1
+        if (title[iterator] == " ") {
+            numofspaces+=1;
         }}
     if (numofspaces < 1) {
         cout<<"Please Enter 2 words at least for the Title !!"}
     
-    else {Title = Titl}
+    else {Title = title;}
 }
 
 void Course::setInstructor(string Instructor_name){
@@ -33,11 +33,11 @@ void Course::setInstructor(string Instructor_name){
     int iterator = 0;
     int num_of_spaces = 0;
     if (len_name == 0) {
-        cout<<"Invalid , Enter the name correctly "
+        cout<<"Invalid , Enter the name correctly ";
     }
     for (; iterator<len_name; iterator++) {
         if(Instructor_name[iterator] == " "){
-            num_of_spaces + = 1
+            num_of_spaces += 1;
         }}
         if (num_of_spaces < 1) {
             cout<<"Please Enter The first and second name at least !!"}
@@ -54,7 +54,7 @@ void Course::setCode(vector<string>course_code){
     } vector<string> Code = course_code;
     }
 void Course::setPrerequisete(vector<string>prerequisetes,vector<string> Code){
-    prerequisete_length = Code.size()
+    int prerequisete_length = Code.size();
     string temp_prerequisete;
     for(int iterator{0}; iterator<prerequisete_length;iterator++){
         cout<<"Enter Prerequisete : if there's no prerequisete enter 'nan'\n"; cout<<Code[iterator]<<" "; cin>>temp_prerequisete;
