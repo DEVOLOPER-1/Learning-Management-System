@@ -54,7 +54,5 @@ void Course::setCode(vector<string>course_code){
     }
 }
 
-
-
 //Getters
 string getTitle(return Title;)
