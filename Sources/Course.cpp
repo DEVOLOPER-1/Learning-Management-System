@@ -64,7 +64,7 @@ void Course::setPrerequisete(vector<string>prerequisetes,vector<string> Code){
 void Course::CreditHours(int CreditHours,vector<string> Code){
     int *array{ new int[Code.size()]};
     for(int iterator{0}; iterator<Code.size();iterator++){
-        cout<<"Enter Credit Hours : "; cin>>array[iterator]{  } };
+        cout<<"Enter Credit Hours : ";  cout<<Code[iterator]<<" "; cin>>array[iterator] };
 }
 
 //Getters
