@@ -41,5 +41,6 @@
   "files.associations": {
     "iostream": "cpp",
     "new": "cpp"
-  }
+  },
+  "git.autofetch": true
 }
