@@ -6,7 +6,7 @@ class Course
 {
 private:
 	string Title;
-	string instructr;
+	string instructor;
 	string Code;
 	string Prerequisete;
 	int CreditHours;
@@ -16,7 +16,7 @@ private:
 	string Place;
 public:
 	void setTitle(string);
-	void setInstructor(Instructor);
+	void setInstructor(string);
 	void setCode(string);
 	void setPrerequisete(string);
 	void setCreditHours(int);

@@ -3,7 +3,13 @@
 #include "Member.h"
 #include <string>
 using namespace std;
+
+
 //Constructor
+
+
+
+
 
 
 //Setter Methods
@@ -45,7 +51,7 @@ void Petition::setTitle(string Titl){
     if (numofspaces < 2) {
         cout<<"Please Enter 3 words at least for the Title !!"}
     
-    else {Title = Titl}
+    else {Title = Titl ;}
 }
 
 
