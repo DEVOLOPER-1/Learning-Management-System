@@ -4,26 +4,26 @@
 class Course
 {
 private:
-	string Title;
-	string instructor;
+	string Title; 
+	vector<string> instructor; //setting courses codes wil be before setting course setting instructors as it will depend on the length of courses codes
 	vector<string> Code;
 	vector<string> Prerequisete;
 	int CreditHours;
-	int Section;
+	vector<int> Section;
 	string TimeSlot;
 	string Day;
-	string Place;
+	vector<string> Place;
 public:
 	void setTitle(string);
-	void setInstructor(string);
+	void setInstructor(string,vector<string> Code);
 	void setCode(vector <string>);
-    void CreditHours(int CreditHours, vector<string> Code);
+    //void CreditHours(unsigned int CreditHours, vector<string> Code);
     void Course::setPrerequisete(vector<string>prerequisetes,vector<string> Code);
-    void setCreditHours(int);
-	void setSection(int);
-	void setPlace(string);
+    void setCreditHours(unsigned int section,vector<string> Code);
+	void setSection(vector <int> section,vector<string> Code);
+	void setPlace(vector <string> Placevector,vector<string> Code);
 	void setTime(string);
-	void setDay(string);
+	void setDay(vector<string> Dayvector , vector<string> Code);
 	string getTitle();
 	Instructor getInstructor();
 	string getCode();

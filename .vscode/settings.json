@@ -35,5 +35,11 @@
   ],
   "C_Cpp_Runner.useAddressSanitizer": false,
   "IDX.aI.enableInlineCompletion": true,
-  "IDX.aI.enableCodebaseIndexing": true
+  "IDX.aI.enableCodebaseIndexing": true,
+  "bitoAI.codeCompletion.enableCommentToCode": true,
+  "bitoAI.codeCompletion.enableAutoCompletion": true,
+  "files.associations": {
+    "iostream": "cpp",
+    "new": "cpp"
+  }
 }
