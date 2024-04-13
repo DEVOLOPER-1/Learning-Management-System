@@ -4,7 +4,8 @@ using namespace std;
 #include "Member.h"
 
 // constructor
-Member::Member() {
+Member::Member() 
+{
     Counter += 1;
     Name = "";
     Sex = NULL;
@@ -14,9 +15,8 @@ Member::Member() {
     Age = 0;
     Mail = "";
 }
-Member::Member(string name, char s, string role, string nationalID) : Age(0)
+Member::Member(string name, char s, string role, string nationalID) :/*initilizing to handle the errors in the seters functions*/ Member() 
 {
-    Counter += 1;
     setName(name);
     setRole(role);
     setNational_ID(nationalID);
@@ -54,8 +54,9 @@ void Member::setNational_ID(string id)
         generateMail();
         calcAge();
     }
-    else
+    else{
         cout << "Invalid ID number! Please recheck your input. " <<endl;
+    }
 }
 
 #include <cctype>
