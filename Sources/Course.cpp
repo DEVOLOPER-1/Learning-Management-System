@@ -44,8 +44,10 @@ void Course::setInstructor(string Instructor_name){
         else{instructor = Instructor_name ;}
     }
 
-void Course::setCode(string course_code){
-    course_code[]{};
+void Course::setCode(vector course_code){
+    unsigned int num_of_courses{0};
+    cout<<"Enter No. of Course codes you will enter"; cin>>num_of_courses;
+    
     
     
 }
