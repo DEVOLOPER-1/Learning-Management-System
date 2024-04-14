@@ -18,7 +18,7 @@ string Announcement::getContent() {
     return Content;
 }
 time_t Announcement::getDate() {
-    time_t t = time(0);                  // get current time
+    time_t t = time(0);                  
     tm* CurrentTimePtr = localtime(&t);
     CurrentDay = CurrentTimePtr->tm_mday;
     CurrentMonth = (CurrentTimePtr->tm_mon + 1);
