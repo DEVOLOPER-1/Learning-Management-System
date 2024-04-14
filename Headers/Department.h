@@ -11,7 +11,7 @@ class Department
 private:
 	string Name;
 	vector <string> Majors;
-	vector <Instructor> Staff;
+	//vector <Instructor> Staff;
 	string Dean_Name;
 public:
 //Constructors____________________________________________________________________
@@ -31,6 +31,6 @@ Department();
 	string getName();
 	string getDean_Name();	
 	vector <string> getMajors();
-	vector <Instructor> getStaff();
+	//vector <Instructor> getStaff();
 };
 

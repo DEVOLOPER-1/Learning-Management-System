@@ -1,40 +1,16 @@
-#include<iostream>
-#include <vector>
-#include "Instructor.h"
-#include "Dean.h"
 #include "Department.h"
-<<<<<<< HEAD
-
-void Department::setDean(Dean) {
-
-}
-void Department::setName(string) {
-
-}
-void Department::addMajor(string) {
-
-}
-void Department::addToStuff(Instructor) {
-
-}
-void Department::display() {
-
-}
-=======
+#include "Dean.h"
 #include "Instructor.h"
 #include <string>
 #include <vector>
 using namespace std;
 
-//Constructors____________________________________________________________________
+// Constructors____________________________________________________________________
+vector<string> initializer_vector(0); // The vector has Zero Strings
+Department::Department()
+    : Name("\0"), Dean_Name("\0"), Majors(initializer_vector) {}
 
-
-
-
-
-
-
-//Setters____________________________________________________________________________
+// Setters____________________________________________________________________________
 void Department::setName(string name) {
   for (int iterator = 0; iterator < name.size() - 1; iterator++) {
     if (name[iterator] == ' ') {
@@ -43,8 +19,7 @@ void Department::setName(string name) {
   }
 }
 
-
-void Department::setDean(string dean_name){
+void Department::setDean(string dean_name) {
 
   for (int iterator = 0; iterator < dean_name.size() - 1; iterator++) {
     if (dean_name[iterator] == ' ') {
@@ -53,29 +28,18 @@ void Department::setDean(string dean_name){
   }
 }
 
-
-void Department::addMajor(string major_entry_by_user){
-    if (major_entry_by_user != "\0"|| major_entry_by_user != " ")
-    {
-    vector <string> majors;
+void Department::addMajor(string major_entry_by_user) {
+  if (major_entry_by_user != "\0" || major_entry_by_user != " ") {
+    vector<string> majors;
     majors.push_back(major_entry_by_user);
     Majors = majors;
-    }
-    
-
+  }
 }
 
+// Getters________________________________________________________________________
 
+string Department::getName() { return Name; }
 
+string Department::getDean_Name() { return Dean_Name; }
 
-
-
-
-
-
-
-
-
-
-//Getters________________________________________________________________________
->>>>>>> 78070ff (Department Class under construction)
+vector<string> Department::getMajors() { return Majors; }
