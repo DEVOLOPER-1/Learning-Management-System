@@ -10,12 +10,12 @@ private:
 	string Content;
 	string Date;
 	vector<Comment> Comments;
-	void setDate(time_t);
+	void setDate(time_t time);
 public:
 	void setContent(string);
 	void publish();
 	string getContent();
 	time_t getDate();
-	void displat();
-	void Delete();
+	void display();
+	void deleteAnnouncement();
 };
