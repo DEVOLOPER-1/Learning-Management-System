@@ -12,7 +12,7 @@ private:
 	string Name;
 	vector <string> Majors;
 	vector <Instructor> Staff;
-	string dean;
+	string Dean_Name;
 public:
 	void setDean(Dean);
 	void setName(string);
