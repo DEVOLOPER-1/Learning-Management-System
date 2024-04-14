@@ -8,13 +8,19 @@ using namespace std;
 class Meeting : public List
 {
 private:
-	Student Teammate;
-	vector<Student> Team;
+	//Student Teammate;
+	//vector<Student> Team;
 	vector<string> TeamName;
-
+	unsigned int No_Of_Team_Members;
 public:
-	void addTeammate(Student);
-	void deleteTeammate(Student);
-	void createTeam(int members);
+//Constructors________________________________________________________
+	Meeting();
+//Setters____________________________________________________________
+	//void addTeammate(Student);
+	//void deleteTeammate(Student);
+	void createTeam(unsigned int members);
+
+//Getters____________________________________________________________
+unsigned int getNo_Of_Team_Members(); 	
 };
 
