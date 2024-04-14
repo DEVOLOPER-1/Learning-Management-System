@@ -81,8 +81,8 @@ void Petition::decide(Member& check_member_role){
 
 
 //Getter Methods
-string getTitle(){return Title;}
-string getContent(){return Content;}
+string Petition::getTitle(){return Title;}
+string Petition::getContent(){return Content;}
 
 /* Content Sample Petition
 This petition is for discussing the various changes in the syllabus of various courses without any declaration for the students

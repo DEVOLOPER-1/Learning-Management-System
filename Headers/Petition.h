@@ -34,7 +34,7 @@ public:
 	void request();
 	string getTitle();
 	string getContent();
-	void display(Dean, Student);
+	//void display(Dean, Student);
 	void decide(Member& check_member_role);
 	// Friends.........................................
     friend class Member; //The friend relationship is made by youssef and it's to access the the role string and if it's a dean the petition status will be changed upon it.
