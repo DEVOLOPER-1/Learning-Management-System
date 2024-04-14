@@ -54,7 +54,16 @@ void Department::setDean(string dean_name){
 }
 
 
-void Department::
+void Department::addMajor(string major_entry_by_user){
+    if (major_entry_by_user != "\0"|| major_entry_by_user != " ")
+    {
+    vector <string> majors;
+    majors.push_back(major_entry_by_user);
+    Majors = majors;
+    }
+    
+
+}
 
 
 
