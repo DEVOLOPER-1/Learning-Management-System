@@ -8,8 +8,8 @@ using namespace std;
 // Control + shift + P
 
 Course::Course()
-    : Title("/0"), instructor("/0"), Code("/0"), Prerequisete("/0"),
-      CreditHours(0), Section(0), TimeSlot("/0"), Day("/0"), Place("/0") {
+    : Title("\0"), instructor("\0"), Code("\0"), Prerequisete("\0"),
+      CreditHours(0), Section(0), TimeSlot("\0"), Day("\0"), Place("\0") {
   // Initializer list is executable before default constructor so it has the
   // priority to be executed firstly and it's better and has more features and
   // it can be used to initialize the object with some constant values or
