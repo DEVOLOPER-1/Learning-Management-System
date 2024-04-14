@@ -97,7 +97,6 @@ void Course::setSection(unsigned int sectionvector) {
   if (sectionvector != 0) {
     Section = sectionvector;
   }
-
 }
 
 // int Section[num_of_courses];
@@ -123,10 +122,10 @@ void Course::setDay(string temp_day) {
   for(int iterator{0}; iterator<num_of_courses;iterator++){
       cout<<"Enter Day :  "; cout<<Code.at(iterator)<<"  "; cin>>temp_day;
   Dayvector.push_back(temp_day); */
-  if (temp_day != "nan" || temp_day != " " or temp_day != "" || temp_day!="/0") {
+  if (temp_day != "nan" || temp_day != " " or temp_day != "" ||
+      temp_day != "/0") {
     Day = temp_day;
   }
-  
 }
 
 void Course::setTime(string time) {
