@@ -15,6 +15,6 @@ private:
 public:
 	void addTeammate(Student);
 	void deleteTeammate(Student);
-	void createTeam(int members);
+	void createTeam();
 };
 
