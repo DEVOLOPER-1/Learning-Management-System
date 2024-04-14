@@ -1,11 +1,14 @@
 #pragma once
 #include <iostream>
+
 #include "Instructor.h"
 class Course
 {
 private:
-	string Title; 
-	string instructor; //setting courses codes wil be before setting course setting instructors as it will depend on the length of courses codes
+	string Title;
+	string instructor; // setting courses codes wil be before setting course
+					   // setting instructors as it will depend on the length of
+					   // courses codes
 	string Code;
 	string Prerequisete;
 	unsigned int CreditHours;
@@ -13,21 +16,31 @@ private:
 	string TimeSlot;
 	string Day;
 	string Place;
+
 public:
+	// Constructors________________________________________________________________
 	Course();
-	//Course(string Title, string instructor, string Code, string Prerequisete, unsigned int CreditHours, unsigned int Section, string TimeSlot, string Day, string Place);
+	// Course(string Title, string instructor, string Code, string Prerequisete,
+	// unsigned int CreditHours, unsigned int Section, string TimeSlot, string
+	// Day, string Place);
+
+	// Setters________________________________________________________________
 	void setTitle(string title);
 	void setInstructor(string Instructor_name);
 	void setCode(string course_code);
-    //void CreditHours(unsigned int CreditHours, vector<string> Code);
-    void Course::setPrerequisete(string prerequisetes);
-    void setCreditHours(unsigned int section,vector<string> Code);
+	// void CreditHours(unsigned int CreditHours, vector<string> Code);
+	void Course::setPrerequisete(string prerequisetes);
+	void setCreditHours(unsigned int section, vector<string> Code);
 	void setSection(unsigned int sectionvector);
 	void setPlace(string Placevector);
 	void setTime(string time);
 	void setDay(string temp_day);
+	void display();
+	void Delete();
+
+	// Getters__________________________________________________________________
 	string getTitle();
-	//Instructor getInstructor();
+	// Instructor getInstructor();
 	string getCode();
 	string getPrerequisete();
 	string getPlace();
@@ -35,6 +48,4 @@ public:
 	unsigned int getSection();
 	string getTime();
 	string getDay();
-	void display();
-	void Delete();
 };
