@@ -38,6 +38,7 @@
   "IDX.aI.enableCodebaseIndexing": true,
   "files.associations": {
     "cstdlib": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "iostream": "cpp"
   }
 }
