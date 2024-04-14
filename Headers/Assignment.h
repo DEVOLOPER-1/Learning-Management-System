@@ -2,26 +2,28 @@
 #include <iostream>
 #include <vector>
 #include "Announcement.h"
+#include <ctime>
 
 class Assignment: public Announcement
 {
 private:
 	string Title;
-	string DueDate;
+	struct tm DueDate;
 	bool isDone;
 	float Grade;
 	string Submission;
-	string status;
-	void getStatus();
+	string Status;
 	void checkStatus();
 public:
 	void setTitle(string);
 	void setDueDate(string);
-	void setGrade(float);
+	void setGrade(float, float);
 	void setSubmission(string);
 	string getTitle();
-	string getDueDate();
+	struct tm getDueDate();
 	float getGrade();
+	string getStatus();
+	string getSubmission();
 	void display();
 };
 

@@ -61,11 +61,7 @@ int main()
     // }
     // cout << id << endl;
 
-    time_t current;
+    string due = "2 / 4, 23:59";
     
-    time(&current);
-    struct tm* tmStruct = localtime(&current);
-
-    cout << tmStruct ->tm_min <<endl;
 }
 #include <string.h>
