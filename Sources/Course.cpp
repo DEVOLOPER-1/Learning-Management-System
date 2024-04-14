@@ -114,9 +114,28 @@ void Course::setDay(string temp_day){
 
 void Course::setTime(string time){
 //int len_of_classes_vector = Code.size();
-string time[7]{"12.00PM"};
-string time_sample {"12.00PM"};
-cout<<"You will have to enter 7 slots to express the time from left to right like the following  "<<time_sample<<endl;
+if (time[0]=='0' and time[1]=='0')
+{
+    cout<<"Invalid Entry";
+}
+if (time[2] != ':' or time[2] != '.')
+{
+    cout<<"Invalid Entry you should use ':' or '.' for index 3";
+}
+
+if (time[5]!= 'p'||'a'||'P'||'A')
+{
+    cout<<"Invalid Entry you should use 'p' or 'a' for index 6";
+}
+if (time[6]!= 'm'||'M')
+{
+    cout<<"Invalid Entry you should use 'm' or 'M' for index 7";
+}
+
+else{TimeSlot = time;}
+
+
+
 /*
  for (int iterator0 = 0; iterator0 < len_of_classes_vector; iterator0++){
         for (int time_index{0}; time_index < 7; time_index++){
@@ -124,11 +143,9 @@ cout<<"You will have to enter 7 slots to express the time from left to right lik
     cout<<"Enter slot with index "<<time_index+1<<" "; cin>>time[time_index];} 
     Timevector.push_back(time[iterator0]);
 } */
-for (int time_index{0}; time_index < 7; time_index++){
-    cout<<time[time_index]<<time[time_index+1]<<endl;
-    cout<<"Enter slot with index "<<time_index+1<<" "; cin>>time[time_index];} 
+ 
      
-    TimeSlot = time;
+    
 } //This Method is not mature yet!!!
 
 
@@ -185,3 +202,28 @@ string Course::getDay(){return Day;}
 string Course::getTime(){return TimeSlot;}
 
 
+
+
+
+
+
+
+
+
+
+
+//Time Data Entry in main 
+/*
+
+string time_sample {"12.00PM"};
+cout<<"You will have to enter 7 slots to express the time from left to right like the following  "<<time_sample<<endl;
+
+
+for (int time_index{0}; time_index < 7; time_index++){
+    cout<<time[time_index]<<time[time_index+1]<<endl;
+    cout<<"Enter slot with index "<<time_index+1<<" "; cin>>time[time_index];}
+
+
+
+
+*/
