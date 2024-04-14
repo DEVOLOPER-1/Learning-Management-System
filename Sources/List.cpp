@@ -15,9 +15,9 @@ void List::setCurrentDate()
 {
     time_t t = time(0);                  // get current time
     tm* CurrentTimePtr = localtime(&t);
-    CurrentDay   = CurrentTimePtr->tm_mday;
+    CurrentDay = CurrentTimePtr->tm_mday;
     CurrentMonth = (CurrentTimePtr->tm_mon + 1);
-    CurrentYear  = (CurrentTimePtr->tm_year + 1900);
+    CurrentYear = (CurrentTimePtr->tm_year + 1900);
 }
 
 void List::splitDueDate()
@@ -43,7 +43,7 @@ void List::splitDueDate()
     // Converting due date components to integer and assign them to the equivelent attributes
     DueDay   = stoi(DueDateComponentsVctr.at(0));
     DueMonth = stoi(DueDateComponentsVctr.at(1));
-    DueYear  = stoi(DueDateComponentsVctr.at(2));
+    DueYear = stoi(DueDateComponentsVctr.at(2));
 
     // Clearig due date components vector
     DueDateComponentsVctr.clear();
