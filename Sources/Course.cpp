@@ -135,7 +135,7 @@ if (time[6]!= 'm'||'M')
 else{TimeSlot = time;}
 
 
-
+ 
 /*
  for (int iterator0 = 0; iterator0 < len_of_classes_vector; iterator0++){
         for (int time_index{0}; time_index < 7; time_index++){
