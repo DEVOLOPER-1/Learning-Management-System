@@ -1,13 +1,21 @@
 #pragma once
 #include <iostream>
+#include <ctime>
+#include <string>
+#include <vector>
 using namespace std;
 
 class List
 {
 protected:
 	string Content, DueDate, Status;
+	int CurrentDay, CurrentMonth, CurrentYear;
+	int DueDay, DueMonth, DueYear;
 	bool isDone;
-	void changeStatus();
+	void setCurrentDate();
+	void splitDueDate();
+	bool isValidTime();
+	void checkStatus();
 
 public:
 	void setContent(string);
