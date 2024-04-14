@@ -15,6 +15,8 @@ private:
 	string Status;
 	void checkStatus();
 public:
+	Assignment();
+	Assignment(string, string, string);
 	void setTitle(string);
 	void setDueDate(string);
 	void setGrade(float, float);

@@ -1,8 +1,14 @@
 #include "Assignment.h"
 
 // Constructors
+Assignment::Assignment() : Title(""), isDone(0), Grade(NULL), Submission(""), Status("assigned"){}
 
-
+Assignment::Assignment(string t, string due, string desc) : Assignment()
+{
+    setTitle(t);
+    setDueDate(due);
+    setContent(desc);
+}
 // Seters 
 void Assignment::setTitle(string t)
 {
@@ -60,4 +66,18 @@ struct tm Assignment::getDueDate(){return DueDate;}
 float Assignment::getGrade(){return Grade;}
 string Assignment::getStatus() {return Status;}
 string Assignment::getSubmission() {return Submission;}
+
 // Other
+void Assignment::checkStatus()
+{
+    time_t now;
+    time(&now);
+    struct tm* curr = localtime(&now);
+
+    if (curr->tm_mday >= DueDate.tm_mday && curr->tm_mon >= DueDate.tm_mon && !isDone && curr->tm_hour>DueDate.tm_hour)
+    {Status = "missing";}
+
+    //hendeling the case of 11:59
+    if (curr->tm_mday > DueDate.tm_mday && curr->tm_mon >= DueDate.tm_mon && !isDone) 
+    {Status = "missing";}
+}
