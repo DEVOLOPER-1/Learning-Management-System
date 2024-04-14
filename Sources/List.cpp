@@ -14,12 +14,11 @@ void List::setCurrentDate()
     CurrentDay = CurrentTimePtr->tm_mday;
     CurrentMonth = (CurrentTimePtr->tm_mon + 1);
     CurrentYear = (CurrentTimePtr->tm_year + 1900);
-    delete CurrentTimePtr;
 }
 
 void List::splitDueDate()
 {
-    int CharIndex = 0;                    //an Iterator that will have the index of each Characher in the original string (DueDate string)
+    int CharIndex = 0;                    //An Iterator that will have the index of each Characher in the original string (DueDate string)
     vector<string> DueDateComponentsVctr; // A vector that stores the due date components resulted from spliting
     string TempString;                    // A temporary string used to split the string
 
