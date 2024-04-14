@@ -5,6 +5,7 @@
 #include "Assignment.h"
 #include "Course.h"
 #include "Dashboard.h"
+#include "List.h"
 /*
 - year: int
 - registered: vector<Classroom>
@@ -18,13 +19,12 @@
 class Student
 {
 private:
-	int year;
-	vector<Classroom> RegisteredCourese;
-	string request_course; //need to be clarified more
-	vector<Assignment> assignments;
-	Classroom openClassroom(Classroom);
+
+	vector<List> ToDoList;
 public:
-	void openDashboard(Dashboard);
-	void registerCourse(Course);
+	void addTask(List task);
+	void removeTask(int index);
+	void displayToDolist();
+	void chooseTask(int index);
 };
 
