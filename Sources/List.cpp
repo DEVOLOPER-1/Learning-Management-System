@@ -4,7 +4,7 @@
 //Constructors
 List::List() : List("\0", "0/0/0") {} // Delegating constructor
 
-List::List(string Content, string DueDate) : isDone{ false }, Content{ Content }, DueDate{ Content }
+List::List(string Content, string DueDate) : isDone{ false }, isDeleted{ false }, Content{ Content }, DueDate{ Content }
 {
     CurrentDay = 0; CurrentMonth = 0; CurrentYear = 0;
     DueDay = 0; DueMonth = 0; DueYear = 0;
@@ -96,10 +96,21 @@ void List::complete() { isDone = true; }
 
 void List::display()
 {
+    if (isDeleted)
+        return;
 
+    checkStatus();
+
+    cout << "Todo: " << getContent() << "\n"
+         << "Status: " << getDueDate() << "\n";
+
+    if (!isDone)
+        cout << "Due date: " << getDueDate << "\n";
 }
 
 void List::Delete()
 {
+    isDeleted = true;
+    cout << "task deleted succesfully\n";
 }
 

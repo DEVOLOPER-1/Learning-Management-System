@@ -11,7 +11,7 @@ protected:
 	string Content, DueDate, Status;
 	int CurrentDay, CurrentMonth, CurrentYear;
 	int DueDay, DueMonth, DueYear;
-	bool isDone;
+	bool isDone, isDeleted;
 	void setCurrentDate();
 	void splitDueDate();
 	bool isValidTime();
