@@ -5,7 +5,7 @@ using namespace std;
 
 class Member
 {
-private:
+protected:
 	// Variables..............................................
 	string Name, NationalID, Uni_ID, Mail, Role;
 	char Sex;
