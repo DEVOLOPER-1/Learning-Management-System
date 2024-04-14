@@ -4,32 +4,35 @@
 class Course
 {
 private:
-	string Title;
-	string instructor;
-	vector<string> Code;
-	vector<string> Prerequisete;
-	int CreditHours;
-	int Section;
+	string Title; 
+	string instructor; //setting courses codes wil be before setting course setting instructors as it will depend on the length of courses codes
+	string Code;
+	string Prerequisete;
+	unsigned int CreditHours;
+	unsigned int Section;
 	string TimeSlot;
 	string Day;
 	string Place;
 public:
-	void setTitle(string);
-	void setInstructor(string);
-	void setCode(vector <string>);
-    void CreditHours(int CreditHours, vector<string> Code);
-    void Course::setPrerequisete(vector<string>prerequisetes,vector<string> Code);
-    void setCreditHours(int);
-	void setSection(int);
-	void setPlace(string);
-	void setTime(string);
-	void setDay(string);
+	Course();
+	//Course(string Title, string instructor, string Code, string Prerequisete, unsigned int CreditHours, unsigned int Section, string TimeSlot, string Day, string Place);
+	void setTitle(string title);
+	void setInstructor(string Instructor_name);
+	void setCode(string course_code);
+    //void CreditHours(unsigned int CreditHours, vector<string> Code);
+    void Course::setPrerequisete(string prerequisetes);
+    void setCreditHours(unsigned int section,vector<string> Code);
+	void setSection(unsigned int sectionvector);
+	void setPlace(string Placevector);
+	void setTime(string time);
+	void setDay(string temp_day);
 	string getTitle();
-	Instructor getInstructor();
+	//Instructor getInstructor();
 	string getCode();
 	string getPrerequisete();
-	int getCreditHours();
-	int getSection();
+	string getPlace();
+	unsigned int getCreditHours();
+	unsigned int getSection();
 	string getTime();
 	string getDay();
 	void display();

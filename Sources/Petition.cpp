@@ -16,7 +16,7 @@ using namespace std;
 
 void Petition::setStatus(bool seen){
     string statu_array[]{"Pending","Done"};
-    bool seen{false};
+    //bool seen{false};
     if (seen == false) {
         string status = statu_array[0];
     }
