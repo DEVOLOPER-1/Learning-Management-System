@@ -2,22 +2,22 @@
 #include "List.h"
 
 //Constructors
-List::List() : List('\0', "0/0/0") {}
+List::List() : List("\0", "0/0/0") {}
 
-List::List(string Content, string DueDate) : isDone{ false }, Content{ Content }, DueDate{ Content } 
+List::List(string Content, string DueDate) : isDone{ false }, Content{ Content }, DueDate{ Content }
 {
     CurrentDay = 0; CurrentMonth = 0; CurrentYear = 0;
-    DueDay     = 0; DueMonth     = 0; DueYear     = 0;
-};
+    DueDay = 0; DueMonth = 0; DueYear = 0;
+}
 
 //PROTECTED BEHAVIOURS:
 void List::setCurrentDate()
 {
     time_t t = time(0);                  // get current time
     tm* CurrentTimePtr = localtime(&t);
-    CurrentDay   = CurrentTimePtr->tm_mday;
+    CurrentDay = CurrentTimePtr->tm_mday;
     CurrentMonth = (CurrentTimePtr->tm_mon + 1);
-    CurrentYear  = (CurrentTimePtr->tm_year + 1900);
+    CurrentYear = (CurrentTimePtr->tm_year + 1900);
 }
 
 void List::splitDueDate()
@@ -41,9 +41,9 @@ void List::splitDueDate()
     TempString.clear();
 
     // Converting due date components to integer and assign them to the equivelent attributes
-    DueDay   = stoi(DueDateComponentsVctr.at(0)); 
+    DueDay = stoi(DueDateComponentsVctr.at(0));
     DueMonth = stoi(DueDateComponentsVctr.at(1));
-    DueYear  = stoi(DueDateComponentsVctr.at(2));
+    DueYear = stoi(DueDateComponentsVctr.at(2));
 
     // Clearig due date components vector
     DueDateComponentsVctr.clear();
@@ -101,7 +101,7 @@ void List::complete() { isDone = true; }
 
 void List::display()
 {
-    
+
 }
 
 void List::Delete()
