@@ -28,6 +28,5 @@ public:
 	string getContent() const;
 	string getDueDate() const;
 	string getStatus();
-	int getDueDay();
 };
 

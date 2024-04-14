@@ -2,13 +2,13 @@
 #include "List.h"
 
 //Constructors
-List::List() : List('\0', "0/0/0") {}
+List::List() : List("\0", "0/0/0") {} // Delegating constructor
 
-List::List(string Content, string DueDate) : isDone{ false }, Content{ Content }, DueDate{ Content } 
+List::List(string Content, string DueDate) : isDone{ false }, Content{ Content }, DueDate{ Content }
 {
     CurrentDay = 0; CurrentMonth = 0; CurrentYear = 0;
-    DueDay     = 0; DueMonth     = 0; DueYear     = 0;
-};
+    DueDay = 0; DueMonth = 0; DueYear = 0;
+}
 
 //PROTECTED BEHAVIOURS:
 void List::setCurrentDate()
@@ -26,8 +26,8 @@ void List::splitDueDate()
     vector<string> DueDateComponentsVctr; // A vector that stores the due date components resulted from spliting
     string TempString;                    // A temporary string used to split the string
 
-    while (DueDate[CharIndex] != '\0') {
-        if (DueDate[CharIndex] != '/') {
+    while  (DueDate[CharIndex] != '\0') {
+        if (DueDate[CharIndex] != '/')  {
             TempString += DueDate[CharIndex];
         }
         else {
@@ -41,7 +41,7 @@ void List::splitDueDate()
     TempString.clear();
 
     // Converting due date components to integer and assign them to the equivelent attributes
-    DueDay   = stoi(DueDateComponentsVctr.at(0)); 
+    DueDay   = stoi(DueDateComponentsVctr.at(0));
     DueMonth = stoi(DueDateComponentsVctr.at(1));
     DueYear  = stoi(DueDateComponentsVctr.at(2));
 
@@ -69,10 +69,10 @@ void List::checkStatus()
 {
     //bool isValidTimeReturnContainer = isValidTime();
     if (isDone)
-        Status = "Done";
+           Status = "Done";
 
     else if (isValidTime())
-        Status = "In progress";
+           Status = "In progress";
 
     else { Status = "Missed"; }
 }
@@ -91,17 +91,12 @@ string List::getDueDate() const { return DueDate; }
 
 string List::getStatus() { checkStatus(); return Status; }
 
-int List::getDueDay()
-{
-    return DueDay;
-}
-
 //Other public behaviours
 void List::complete() { isDone = true; }
 
 void List::display()
 {
-    
+
 }
 
 void List::Delete()
