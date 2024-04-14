@@ -8,15 +8,15 @@ using namespace std;
 //Control + shift + P
 
 
-Course::Course(){Title = "Null";
-    instructor = "Null";
-    Code = "Null";
-    Prerequisete = "Null";
-    CreditHours = 0;
-    Section = 0;
-    TimeSlot = "Null";
-    Day = "Null";
-    Place = "Null";};
+Course::Course(){Title = '/0'; //special character for null value in string
+    instructor = '/0';
+    Code = '/0';
+    Prerequisete = '/0';
+    CreditHours = '/0';
+    Section = '/0';
+    TimeSlot = '/0';
+    Day = '/0';
+    Place = '/0';}
 
 
 //Setters
@@ -132,8 +132,28 @@ for (int time_index{0}; time_index < 7; time_index++){
 } //This Method is not mature yet!!!
 
 
+void Course::display(){
+    cout<<Title<<endl;
+    cout<<instructor<<endl;
+    cout<<Code<<endl;
+    cout<<Prerequisete<<endl;
+    cout<<CreditHours<<endl;
+    cout<<Section<<endl;
+    cout<<TimeSlot<<endl;
+    cout<<Day<<endl;
+    cout<<Place<<endl;
+}
 
-
+void Course::Delete(){
+    Title = '/0'; //special character for null value in string
+    instructor = '/0';
+    Code = '/0';
+    Prerequisete = '/0';
+    CreditHours = '/0';
+    Section = '/0';
+    TimeSlot = '/0';
+    Day = '/0';
+    Place = '/0';}
 
 
 
@@ -146,4 +166,22 @@ for (int time_index{0}; time_index < 7; time_index++){
 
 
 //Getters
-string getTitle(return  Title);
+string Course::getTitle(){return Title;}
+
+//Instructor::getInstructor(){return instructor;} //Instructor getInstructor() Errrorrr
+
+string Course::getCode(){return Code;}
+
+string Course::getPrerequisete(){return Prerequisete;}
+
+unsigned int Course::getCreditHours(){return CreditHours;}
+
+unsigned int Course::getSection(){return Section;}
+
+string Course::getPlace(){return Place;}
+
+string Course::getDay(){return Day;}
+
+string Course::getTime(){return TimeSlot;}
+
+

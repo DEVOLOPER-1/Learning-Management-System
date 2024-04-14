@@ -27,11 +27,12 @@ public:
 	void setTime(string time);
 	void setDay(string temp_day);
 	string getTitle();
-	Instructor getInstructor();
+	//Instructor getInstructor();
 	string getCode();
 	string getPrerequisete();
-	int getCreditHours();
-	int getSection();
+	string getPlace();
+	unsigned int getCreditHours();
+	unsigned int getSection();
 	string getTime();
 	string getDay();
 	void display();
