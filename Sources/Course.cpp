@@ -149,8 +149,8 @@ void Course::Delete(){
     instructor = '/0';
     Code = '/0';
     Prerequisete = '/0';
-    CreditHours = '/0';
-    Section = '/0';
+    CreditHours = 0;
+    Section = 0;
     TimeSlot = '/0';
     Day = '/0';
     Place = '/0';}
