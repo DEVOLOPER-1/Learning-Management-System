@@ -4,11 +4,9 @@ using namespace std;
 
 class List
 {
-private:
+protected:
 	string Content, DueDate, Status;
 	bool isDone;
-
-protected:
 	void changeStatus();
 
 public:
@@ -17,7 +15,8 @@ public:
 	void complete();
 	void display();
 	void Delete();
-	string getContent();
-	string getStatus();
+	string getContent() const;
+	string getDueDate() const;
+	string getStatus() const;
 };
 
