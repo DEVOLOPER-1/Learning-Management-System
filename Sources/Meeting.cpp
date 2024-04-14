@@ -3,15 +3,20 @@
 #include<string>
 #include "Student.h"
 #include "Meeting.h"
+#include "member.h"
 using namespace std;
 
+void Meeting::createTeam() {
+	cout << "Team created" << endl;
+}
 void Meeting::addTeammate(Student s) {
-	Team.push_back(s);
+	Team.push_back(s.getName());
 }
 void Meeting::deleteTeammate(Student s) {
-	Team.pop_back(s);
-}
-void Meeting::createTeam(int members) {
-	
-	
+    for (auto i = Team.begin(); i != Team.end(); i++) {
+        if (*i == s.getName()) {
+            Team.erase(i);
+            break;
+        }
+    }
 }

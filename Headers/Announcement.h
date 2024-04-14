@@ -9,6 +9,7 @@ class Announcement
 private:
 	string Content;
 	string Date;
+	int CurrentDay, CurrentMonth, CurrentYear;
 	vector<Comment> Comments;
 	void setDate(time_t time);
 public:

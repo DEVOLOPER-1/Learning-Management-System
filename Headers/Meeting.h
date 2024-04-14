@@ -10,11 +10,10 @@ class Meeting : public List
 private:
 	Student Teammate;
 	vector<Student> Team;
-	vector<string> TeamName;
 
 public:
-	void addTeammate(Student);
-	void deleteTeammate(Student);
-	void createTeam(int members);
+	void addTeammate(Student s);
+	void deleteTeammate(Student s);
+	void createTeam();
 };
 
