@@ -37,6 +37,7 @@
   "IDX.aI.enableInlineCompletion": true,
   "IDX.aI.enableCodebaseIndexing": true,
   "files.associations": {
-    "cstdlib": "cpp"
+    "cstdlib": "cpp",
+    "iomanip": "cpp"
   }
 }

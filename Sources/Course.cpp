@@ -152,19 +152,18 @@ void Course::setTime(string time) {
       cout<<"Enter slot with index "<<time_index+1<<" "; cin>>time[time_index];}
       Timevector.push_back(time[iterator0]);
   } */
-
-} // This Method is not mature yet!!!
+}
 
 void Course::display() {
-  cout << Title << endl;
-  cout << instructor << endl;
-  cout << Code << endl;
-  cout << Prerequisete << endl;
-  cout << CreditHours << endl;
-  cout << Section << endl;
-  cout << TimeSlot << endl;
-  cout << Day << endl;
-  cout << Place << endl;
+  cout << setw(10) << Title << setw(10) << '\n\n' << endl;
+  cout << setw(10) << instructor << setw(10) << endl;
+  cout << setw(10) << Code << setw(10) << endl;
+  cout << setw(10) << Prerequisete << setw(10) << endl;
+  cout << setw(10) << CreditHours << setw(10) << endl;
+  cout << setw(10) << Section << setw(10) << endl;
+  cout << setw(10) << TimeSlot << setw(10) << endl;
+  cout << setw(10) << Day << setw(10) << endl;
+  cout << setw(10) << Place << setw(10) << endl;
 }
 
 void Course::Delete() {
