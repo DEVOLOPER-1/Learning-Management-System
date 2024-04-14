@@ -8,7 +8,7 @@ using namespace std;
 // Constructors____________________________________________________________________
 vector<string> initializer_vector(0); // The vector has Zero Strings
 Department::Department()
-    : Name("\0"), Dean_Name("\0"), Majors(initializer_vector) {}
+    : Name("\0"), Dean_Name("\0"), Majors() {}
 
 // Setters____________________________________________________________________________
 void Department::setName(string name) {
