@@ -5,12 +5,18 @@ using namespace std;
 #include <vector>
 #include <iomanip>
 //Constructors
-
-
 //Control + shift + P
 
 
-
+Course::Course(){Title = "Null";
+    instructor = "Null";
+    Code = "Null";
+    Prerequisete = "Null";
+    CreditHours = 0;
+    Section = 0;
+    TimeSlot = "Null";
+    Day = "Null";
+    Place = "Null";};
 
 
 //Setters

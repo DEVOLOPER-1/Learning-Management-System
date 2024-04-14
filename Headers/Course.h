@@ -14,6 +14,8 @@ private:
 	string Day;
 	string Place;
 public:
+	Course();
+	//Course(string Title, string instructor, string Code, string Prerequisete, unsigned int CreditHours, unsigned int Section, string TimeSlot, string Day, string Place);
 	void setTitle(string title);
 	void setInstructor(string Instructor_name);
 	void setCode(string course_code);
