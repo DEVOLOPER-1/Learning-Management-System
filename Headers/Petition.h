@@ -1,8 +1,8 @@
 #pragma once
-#include <iostream>
-#include "Student.h"
 #include "Dean.h"
 #include "Member.h"
+#include "Student.h"
+#include <iostream>
 using namespace std;
 
 /*
@@ -21,22 +21,26 @@ using namespace std;
 + decide()
 */
 
-class Petition
-{
+class Petition {
 private:
-	string Title, Content, isApproved, status;
-	void setStatus(bool seen);
-	void checkSatus();
+  string Title, Content, isApproved, status;
+  void setStatus(bool seen);
+  void checkSatus();
 
 public:
-	void setTitle(string);
-	void setContent(string);
-	void request();
-	string getTitle();
-	string getContent();
-	//void display(Dean, Student);
-	void decide(Member& check_member_role);
-	// Friends.........................................
-    friend class Member; //The friend relationship is made by youssef and it's to access the the role string and if it's a dean the petition status will be changed upon it.
-};
+  // Setters______________________________________________________________________
+  void setTitle(string);
+  void setContent(string);
+  void request();
+  // void display(Dean, Student);
+  void decide(Member &check_member_role);
 
+  // Getters______________________________________________________________________
+  string getTitle();
+  string getContent();
+
+  // Friends.........................................
+  friend class Member; // The friend relationship is made by youssef and it's to
+                       // access the the role string and if it's a dean the
+                       // petition status will be changed upon it.
+};

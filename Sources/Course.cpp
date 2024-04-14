@@ -4,22 +4,19 @@ using namespace std;
 #include <iomanip>
 #include <string>
 #include <vector>
-// Constructors
+// Constructors___________________________________________________________________-
 // Control + shift + P
 
-Course::Course() {
-  Title = '/0'; // special character for null value in string
-  instructor = '/0';
-  Code = '/0';
-  Prerequisete = '/0';
-  CreditHours = 0;
-  Section = 0;
-  TimeSlot = '/0';
-  Day = '/0';
-  Place = '/0';
+Course::Course()
+    : Title("/0"), instructor("/0"), Code("/0"), Prerequisete("/0"),
+      CreditHours(0), Section(0), TimeSlot("/0"), Day("/0"), Place("/0") {
+  // Initializer list is executable before default constructor so it has the
+  // priority to be executed firstly and it's better and has more features and
+  // it can be used to initialize the object with some constant values or
+  // refrences
 }
 
-// Setters
+// Setters____________________________________________________________________
 void Course::setTitle(string title) {
   int len_title = title.length();
   int iterator{0};
@@ -182,7 +179,7 @@ void Course::Delete() {
   Place = '/0';
 }
 
-// Getters
+// Getters______________________________________________________________________________
 string Course::getTitle() { return Title; }
 
 // Instructor::getInstructor(){return instructor;} //Instructor getInstructor()
