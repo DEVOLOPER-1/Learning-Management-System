@@ -86,6 +86,9 @@ void Course::setCreditHours(unsigned int CreditHours,vector<string> Code){
 cin>>array[iterator]; } */
   Prerequisete = prerequisetes;
 }
+void Course::setCreditHours(unsigned int section, vector<string> Code)
+{
+}
 void Course::setSection(unsigned int sectionvector) {
   // int *section_array = new int[Code.size()];
   /*

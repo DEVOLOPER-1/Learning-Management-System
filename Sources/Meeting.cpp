@@ -13,6 +13,9 @@ void Meeting::createTeam() {
 void Meeting::addTeammate(Student s) {
 	Team.push_back(s.getName());
 }
+void Meeting::deleteTeammate(Student)
+{
+}
 void Meeting::deleteTeammate(Student s) {
     for (auto i = Team.begin(); i != Team.end(); i++) {
         if (i == s.getName()) { 

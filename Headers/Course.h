@@ -29,7 +29,7 @@ public:
 	void setInstructor(string Instructor_name);
 	void setCode(string course_code);
 	// void CreditHours(unsigned int CreditHours, vector<string> Code);
-	void Course::setPrerequisete(string prerequisetes);
+	void setPrerequisete(string prerequisetes);
 	void setCreditHours(unsigned int section, vector<string> Code);
 	void setSection(unsigned int sectionvector);
 	void setPlace(string Placevector);

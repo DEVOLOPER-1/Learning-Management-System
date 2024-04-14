@@ -38,6 +38,14 @@ void Department::addMajor(string major_entry_by_user) {
   }
 }
 
+void Department::addToStuff(Instructor)
+{
+}
+
+void Department::display()
+{
+}
+
 // Getters________________________________________________________________________
 
 string Department::getName() { return Name; }
