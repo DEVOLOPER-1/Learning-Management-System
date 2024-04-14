@@ -18,6 +18,7 @@ protected:
 	void checkStatus();
 
 public:
+	List();
 	void setContent(string);
 	void setDueDate(string);
 	void complete();
@@ -25,6 +26,7 @@ public:
 	void Delete();
 	string getContent() const;
 	string getDueDate() const;
-	string getStatus() const;
+	string getStatus();
+	int getDueDay();
 };
 

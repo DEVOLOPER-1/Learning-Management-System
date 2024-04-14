@@ -1,13 +1,20 @@
+#pragma warning(disable : 4996)
 #include "List.h"
+
+//Constructor
+List::List() {
+    isDone = false;
+}
 
 //PROTECTED BEHAVIOURS:
 void List::setCurrentDate()
 {
-	time_t t = time(0);                  // get current time
-	tm* CurrentTimePtr = localtime(&t);
-	CurrentDay   = CurrentTimePtr->tm_mday;
-	CurrentMonth = (CurrentTimePtr->tm_mon + 1);
-	CurrentYear  = (CurrentTimePtr->tm_year + 1900);
+    time_t t = time(0);                  // get current time
+    tm* CurrentTimePtr = localtime(&t);
+    CurrentDay = CurrentTimePtr->tm_mday;
+    CurrentMonth = (CurrentTimePtr->tm_mon + 1);
+    CurrentYear = (CurrentTimePtr->tm_year + 1900);
+    delete CurrentTimePtr;
 }
 
 void List::splitDueDate()
@@ -30,50 +37,59 @@ void List::splitDueDate()
     DueDateComponentsVctr.push_back(TempString);
     TempString.clear();
 
-    DueDay   = stoi(DueDateComponentsVctr.at(0));
+    DueDay = stoi(DueDateComponentsVctr.at(0));
     DueMonth = stoi(DueDateComponentsVctr.at(1));
-    DueYear  = stoi(DueDateComponentsVctr.at(2));
+    DueYear = stoi(DueDateComponentsVctr.at(2));
 
     DueDateComponentsVctr.clear();
 }
 
 bool List::isValidTime()
 {
+    setCurrentDate();
+
     if (CurrentYear < DueYear)
         return true;
 
-    else if ( (CurrentYear = DueYear) && (CurrentMonth < DueMonth) )
+    else if ((CurrentYear = DueYear) && (CurrentMonth < DueMonth))
         return true;
 
     else if ((CurrentMonth = DueMonth) && (CurrentDay <= DueDay))
         return true;
 
-	return false;
+    return false;
 }
 
 void List::checkStatus()
 {
+    //bool isValidTimeReturnContainer = isValidTime();
     if (isDone)
-           Status = "Done";
+        Status = "Done";
 
-    else if (isValidTime)
-           Status = "In progress";
+    else if (isValidTime())
+        Status = "In progress";
 
     else { Status = "Missed"; }
 }
+
 
 //PUBLIC BEHAVIOURS:
 //Setters
 void List::setContent(string Content) { this->Content = Content; }
 
-void List::setDueDate(string DueDate) { this->DueDate = DueDate; }
+void List::setDueDate(string DueDate) { this->DueDate = DueDate; splitDueDate(); }
 
 //Getters
 string List::getContent() const { return Content; }
 
 string List::getDueDate() const { return DueDate; }
 
-string List::getStatus() const { return Status; }
+string List::getStatus() { checkStatus(); return Status; }
+
+int List::getDueDay()
+{
+    return DueDay;
+}
 
 //Other public behaviours
 void List::complete() { isDone = true; }
