@@ -19,6 +19,7 @@ protected:
 
 public:
 	List();
+	List(string, string);
 	void setContent(string);
 	void setDueDate(string);
 	void complete();
