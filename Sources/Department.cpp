@@ -7,8 +7,10 @@ using namespace std;
 
 // Constructors____________________________________________________________________
 vector<string> initializer_vector(0); // The vector has Zero Strings
-Department::Department()
-    : Name("\0"), Dean_Name("\0"), Majors() {}
+
+// Need a way to initialize the vector by zero strings before even the list
+// intializer executes
+Department::Department() : Name("\0"), Dean_Name("\0"), Majors() {}
 
 // Setters____________________________________________________________________________
 void Department::setName(string name) {
