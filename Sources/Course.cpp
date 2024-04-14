@@ -114,25 +114,25 @@ void Course::setDay(string temp_day){
 
 void Course::setTime(string time){
 //int len_of_classes_vector = Code.size();
-if (time[0]=='0' and time[1]=='0')
+if (time[0]!='0' and time[1]!='0')
 {
-    cout<<"Invalid Entry";
+    if (time[2] == ':' or time[2] == '.')
+{
+   if (time[5]== 'p'||'a'||'P'||'A')
+{
+   if (time[6]== 'm'||'M')
+{
+        TimeSlot = time;
 }
-if (time[2] != ':' or time[2] != '.')
-{
-    cout<<"Invalid Entry you should use ':' or '.' for index 3";
+} 
 }
-
-if (time[5]!= 'p'||'a'||'P'||'A')
-{
-    cout<<"Invalid Entry you should use 'p' or 'a' for index 6";
-}
-if (time[6]!= 'm'||'M')
-{
-    cout<<"Invalid Entry you should use 'm' or 'M' for index 7";
 }
 
-else{TimeSlot = time;}
+
+
+
+
+else{TimeSlot != time;}
 
 
  
