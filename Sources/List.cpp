@@ -4,7 +4,7 @@
 //Constructors
 List::List() : List("\0", "0/0/0") {} // Delegating constructor
 
-List::List(string Content, string DueDate) : isDone{ false }, isDeleted{ false }, Content{ Content }, DueDate{ Content }
+List::List(string Content, string DueDate) : isDone{ false }, isDeleted{ false }, Content{ Content }, DueDate{ DueDate }
 {
     CurrentDay = 0; CurrentMonth = 0; CurrentYear = 0;
     DueDay = 0; DueMonth = 0; DueYear = 0;
