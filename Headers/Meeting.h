@@ -10,7 +10,7 @@ class Meeting : public List
 private:
 	//Student Teammate;
 	//vector<Student> Team;
-	vector<string> TeamName;
+	//vector<string> TeamName;
 	unsigned int No_Of_Team_Members;
 public:
 //Constructors________________________________________________________
