@@ -6,17 +6,13 @@
 #include "member.h"
 using namespace std;
 
-void Meeting::createTeam() {
-	cout << "Team created" << endl;
-}
 void Meeting::addTeammate(Student s) {
-	Team.push_back(s.getName());
+	Team.push_back(s);
 }
 void Meeting::deleteTeammate(Student s) {
-    for (auto i = Team.begin(); i != Team.end(); i++) {
-        if (*i == s.getName()) {
-            Team.erase(i);
-            break;
-        }
-    }
+	Team.pop_back(s);
+}
+void Meeting::createTeam(int members) {
+	
+	
 }

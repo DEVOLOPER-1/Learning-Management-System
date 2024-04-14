@@ -1,22 +1,22 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "Comment.h"
 #include "Student.h"
 
 class Comment
 {
 private:
-	string Comment;
+	string Content;
 	string Date;
 	vector <Comment> Replies;
 	bool isPrivate;
+	void setDate();
 	void CheckPrivate();
 public:
-	void setComment(string);
+	void setContent(string);
 	void reply(Comment);
 	vector <Comment> getReplies();
-	string getComment() const;
+	string getContent() const;
 	string getDate() const;
 	void display(Student*, Instructor*, int, int) const;
 };
