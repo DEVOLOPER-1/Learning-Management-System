@@ -142,9 +142,11 @@ void Course::setTime(string time) {
       }
     }
   }
-
+//Throw Error should be implemented here
   else {
-    TimeSlot != time;
+    cout << "Invalid\n Enter time again";
+    cin >> time;
+    setTime(time);
   }
 
   /*
