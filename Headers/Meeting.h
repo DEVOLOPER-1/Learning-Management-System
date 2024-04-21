@@ -2,10 +2,10 @@
 #include <iostream>
 #include <string>
 #include "Student.h"
-#include "List.h"
+#include "Task.h"
 using namespace std;
 
-class Meeting : public List
+class Meeting : public Task
 {
 private:
 	Student Teammate;

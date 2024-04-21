@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-class List
+class Task
 {
 protected:
 	string Content, DueDate, Status;
@@ -18,8 +18,8 @@ protected:
 	void checkStatus();
 
 public:
-	List();
-	List(string, string);
+	Task();
+	Task(string, string);
 	void setContent(string);
 	void setDueDate(string);
 	void complete();
