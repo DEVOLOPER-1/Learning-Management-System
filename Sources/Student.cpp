@@ -1,6 +1,6 @@
 #include "Student.h"
 
-void Student::addTask(List task)
+void Student::addTask(Task task)
 {
 	ToDoList.push_back(task);
 }

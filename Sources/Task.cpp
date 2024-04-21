@@ -1,17 +1,17 @@
 #pragma warning(disable : 4996)
-#include "List.h"
+#include "Task.h"
 
 //Constructors
-List::List() : List("\0", "0/0/0") {} // Delegating constructor
+Task::Task() : Task("\0", "0/0/0") {} // Delegating constructor
 
-List::List(string Content, string DueDate) : isDone{ false }, isDeleted{ false }, Content{ Content }, DueDate{ Content }
+Task::Task(string Content, string DueDate) : isDone{ false }, isDeleted{ false }, Content{ Content }, DueDate{ DueDate }
 {
     CurrentDay = 0; CurrentMonth = 0; CurrentYear = 0;
     DueDay = 0; DueMonth = 0; DueYear = 0;
 }
 
 //PROTECTED BEHAVIOURS:
-void List::setCurrentDate()
+void Task::setCurrentDate()
 {
     time_t t = time(0);                  // get current time
     tm* CurrentTimePtr = localtime(&t);
@@ -20,7 +20,7 @@ void List::setCurrentDate()
     CurrentYear = (CurrentTimePtr->tm_year + 1900);
 }
 
-void List::splitDueDate()
+void Task::splitDueDate()
 {
     int CharIndex = 0;                    // An Iterator that will have the index of each Characher in the original string (DueDate string)
     vector<string> DueDateComponentsVctr; // A vector that stores the due date components resulted from spliting
@@ -49,7 +49,7 @@ void List::splitDueDate()
     DueDateComponentsVctr.clear();
 }
 
-bool List::isValidTime()
+bool Task::isValidTime()
 {
     setCurrentDate();
 
@@ -65,7 +65,7 @@ bool List::isValidTime()
     return false;
 }
 
-void List::checkStatus()
+void Task::checkStatus()
 {
     //bool isValidTimeReturnContainer = isValidTime();
     if (isDone)
@@ -80,21 +80,21 @@ void List::checkStatus()
 
 //PUBLIC BEHAVIOURS:
 //Setters
-void List::setContent(string Content) { this->Content = Content; }
+void Task::setContent(string Content) { this->Content = Content; }
 
-void List::setDueDate(string DueDate) { this->DueDate = DueDate; splitDueDate(); }
+void Task::setDueDate(string DueDate) { this->DueDate = DueDate; splitDueDate(); }
 
 //Getters
-string List::getContent() const { return Content; }
+string Task::getContent() const { return Content; }
 
-string List::getDueDate() const { return DueDate; }
+string Task::getDueDate() const { return DueDate; }
 
-string List::getStatus() { checkStatus(); return Status; }
+string Task::getStatus() { checkStatus(); return Status; }
 
 //Other public behaviours
-void List::complete() { isDone = true; }
+void Task::complete() { isDone = true; }
 
-void List::display()
+void Task::display()
 {
     if (isDeleted)
         return;
@@ -108,7 +108,7 @@ void List::display()
         cout << "Due date: " << getDueDate() << "\n";
 }
 
-void List::Delete()
+void Task::Delete()
 {
     isDeleted = true;
     cout << "task deleted succesfully\n";
