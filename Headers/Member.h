@@ -3,6 +3,7 @@
 #include "Petition.h"
 using namespace std;
 
+int Member::Counter = 0;
 class Member
 {
 protected:
