@@ -10,9 +10,11 @@ private:
 	string Date;
 	vector <Comment> Replies;
 	bool isPrivate;
-	void setDate();
 	void CheckPrivate();
 public:
+	Comment();
+	Comment(string);
+	void setDate();
 	void setContent(string);
 	void reply(Comment);
 	vector <Comment> getReplies();

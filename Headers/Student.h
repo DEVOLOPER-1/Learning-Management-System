@@ -26,5 +26,8 @@ private:
 public:
 	void openDashboard(Dashboard);
 	void registerCourse(Course);
+	vector <Assignment> getStudentAssignments();             // i need it in the assign function for instructor
+
+	void display();                                          // i need it in grading function
 };
 

@@ -32,12 +32,12 @@ vector<string> Classroom::getMaterial()
 
 vector<Student> Classroom::getStudents()
 {
-	return vector<Student>();
+	return students;
 }
 
 vector<Assignment> Classroom::getAssignments()
 {
-	return vector<Assignment>();
+	return assignments;
 }
 
 void Classroom::display()

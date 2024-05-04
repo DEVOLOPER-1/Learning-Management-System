@@ -1,14 +1,17 @@
 #include "Assignment.h"
 
-// Constructors
-Assignment::Assignment() : Title(""), isDone(0), Grade(NULL), Submission(""), Status("assigned"){}
+// Constructors & Destructor
+Assignment::Assignment() : Title(""), isDone(0), Grade(NULL), maxGrade(NULL), Submission(""), Status("assigned"){}
 
-Assignment::Assignment(string t, string due, string desc) : Assignment()
+Assignment::Assignment(string t, string due, string desc, float maxi) : Assignment()
 {
     setTitle(t);
     setDueDate(due);
     setContent(desc);
+    setMaxGrade(maxi);
 }
+
+Assignment::~Assignment () {checkStatus();}
 // Seters 
 void Assignment::setTitle(string t)
 {
@@ -22,7 +25,7 @@ void Assignment::setDueDate(string due)
     // the string entered here should be dd / mm , {hours}:{mins}
     int j = due.find(',');
     string date = due.substr(0, j);
-    string time = due.substr(j+1, size(due)-j-1);
+    string time = due.substr(j+2, size(due)-j-1);
 
     int i = date.find('/');
     string sub1 = date.substr(0, i);
@@ -44,11 +47,13 @@ void Assignment::setDueDate(string due)
     DueDate.tm_sec = 0;
 }
 
-void Assignment::setGrade(float grade, float max)
+void Assignment::setGrade(float grade)
 {
-    if(grade <= max) {Grade = grade/max *100;}
+    if(grade <= maxGrade) {Grade = grade;}
     else {cout << "Error! the grade must be less than or equal the max grade." <<endl;}
 }
+
+void Assignment::setMaxGrade(float maxi) {maxGrade = maxi;}
 
 void Assignment::setSubmission(string link) // the submission of student
 {
@@ -64,6 +69,7 @@ void Assignment::setSubmission(string link) // the submission of student
 string Assignment::getTitle(){return Title;}
 struct tm Assignment::getDueDate(){return DueDate;}
 float Assignment::getGrade(){return Grade;}
+float Assignment::getMaxGrade() {return maxGrade;}
 string Assignment::getStatus() {return Status;}
 string Assignment::getSubmission() {return Submission;}
 
@@ -74,10 +80,23 @@ void Assignment::checkStatus()
     time(&now);
     struct tm* curr = localtime(&now);
 
-    if (curr->tm_mday >= DueDate.tm_mday && curr->tm_mon >= DueDate.tm_mon && !isDone && curr->tm_hour>DueDate.tm_hour)
-    {Status = "missing";}
+    if (curr->tm_mday >= DueDate.tm_mday && curr->tm_mon >= DueDate.tm_mon && curr->tm_hour>DueDate.tm_hour)
+    {
+        if (isDone)
+            Status = "done late";
+        else   
+            Status = "missing";
+    }
 
     //hendeling the case of 11:59
-    if (curr->tm_mday > DueDate.tm_mday && curr->tm_mon >= DueDate.tm_mon && !isDone) 
-    {Status = "missing";}
+    else if (curr->tm_mday > DueDate.tm_mday && curr->tm_mon >= DueDate.tm_mon) 
+    {
+        if (isDone)
+            Status = "done late";
+        else   
+            Status = "missing";
+    }
+    
+    else if (isDone){Status = "done early";}
+    else if (!isDone) {Status = "assigned";}
 }
