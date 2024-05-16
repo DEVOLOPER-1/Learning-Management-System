@@ -21,12 +21,12 @@ private:
 	int year;
 	vector<Classroom> RegisteredCourese;
 	string request_course; //need to be clarified more
-	vector<Assignment> assignments;
+	vector<Assignment*> assignments;
 	Classroom openClassroom(Classroom);
 public:
 	void openDashboard(Dashboard);
 	void registerCourse(Course);
-	vector <Assignment> getStudentAssignments();             // i need it in the assign function for instructor
+	vector <Assignment*> getStudentAssignments();             // i need it in the assign function for instructor
 
 	void display();                                          // i need it in grading function
 };

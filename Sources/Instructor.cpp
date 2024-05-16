@@ -18,32 +18,32 @@ void Instructor::assign(Classroom& cr)
 	cout << "Enter the max grade for the assignment: "; cin >> maxi;
 	Assignment A(title, due, describtion, maxi);
 
-	vector<Student> stds = cr.getStudents();
-	for(int s=0; s<size(stds); s++)
+	cr.addAssignment(&A);
+
+	vector<Student*> stds = cr.getStudents();
+	for(Student* s: stds)
 	{
-		vector<Assignment> assVec = stds[s].getStudentAssignments();
-		assVec.push_back(A);
+		vector<Assignment*> assVec = s->getStudentAssignments();
+		assVec.push_back(&A);
 	}
 }
 
 void Instructor::grade(Classroom& cr, string assTitle)
 {
-	vector<Student> stds = cr.getStudents();
-	for(int s; s<size(stds); s++)
+	vector<Student*> stds = cr.getStudents();
+	for(Student* s:stds)
 	{
-		vector<Assignment> assVec = stds[s].getStudentAssignments();
-		for(int a = size(assVec) - 1; a>=0; a++)
+		vector<Assignment*> assVec = s->getStudentAssignments();
+		for(Assignment* a :assVec)
 		{
-			Assignment ass = assVec[a];
-			if (ass.getTitle() == assTitle)
+			if (a->getTitle() == assTitle)
 			{
-				Student st = stds[s];
-				st.display();
-				cout << "Student Submission: "<< ass.getSubmission()<<endl;
+				s->display();
+				cout << "Student Submission: "<< a->getSubmission()<<endl;
 			
 				float g;
-				cout << "Grade from " << ass.getMaxGrade()<< ": "; cin >> g;
-				ass.setGrade(g);
+				cout << "Grade from " << a->getMaxGrade()<< ": "; cin >> g;
+				a->setGrade(g);
 			}
 		}
 	}
@@ -53,7 +53,7 @@ void Instructor::material(Classroom& cr)
 {
 	string link;
 	cout << "Enter the GoogleDocs link of the material to publish: "; cin>>link;
-	vector<string> clasM = cr.getMaterial();
+	vector<string> clasM = cr.getMaterials();
 	if(link.starts_with("https://"))
 		clasM.push_back(link);
 	else
@@ -63,7 +63,7 @@ void Instructor::material(Classroom& cr)
 Comment Instructor::comment(Classroom& cr)
 {
 	string com;
-	cout << "Enter a comment: "; getline(cin, com);
+	cout << "Add a comment.. "; getline(cin, com);
 	Comment c(com);
 	return c;
 }

@@ -61,7 +61,6 @@ int main()
     // }
     // cout << id << endl;
 
-    string due = "2 / 4, 23:59";
-    
+    // string due = "2 / 4, 23:59";
 }
 #include <string.h>
