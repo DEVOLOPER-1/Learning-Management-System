@@ -57,10 +57,13 @@
     <ClCompile Include="Sources\Dashboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Meeting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Sources\Task.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Meeting.cpp">
+    <ClCompile Include="Sources\Date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -104,10 +107,13 @@
     <ClInclude Include="Headers\Dashboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\Meeting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Headers\Task.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\Meeting.h">
+    <ClInclude Include="Headers\Date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

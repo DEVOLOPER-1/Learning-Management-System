@@ -1,25 +1,19 @@
-#pragma warning(disable : 4996)
 #include "Task.h"
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <vector>
+
 
 //Constructors
 Task::Task() : Task("\0", "0/0/0") {} // Delegating constructor
 
-Task::Task(string Content, string DueDate) : isDone{ false }, isDeleted{ false }, Content{ Content }, DueDate{ DueDate }
+Task::Task(string Content, string DueDate) : isDone{ false }, isDeleted{ false }, Content{ Content }, DueDate{ DueDate }, date{ Date() }
 {
-    CurrentDay = 0; CurrentMonth = 0; CurrentYear = 0;
-    DueDay = 0; DueMonth = 0; DueYear = 0;
+    splitDueDate();
 }
 
 //PROTECTED BEHAVIOURS:
-void Task::setCurrentDate()
-{
-    time_t t = time(0);                  // get current time
-    tm* CurrentTimePtr = localtime(&t);
-    CurrentDay = CurrentTimePtr->tm_mday;
-    CurrentMonth = (CurrentTimePtr->tm_mon + 1);
-    CurrentYear = (CurrentTimePtr->tm_year + 1900);
-}
-
 void Task::splitDueDate()
 {
     int CharIndex = 0;                    // An Iterator that will have the index of each Characher in the original string (DueDate string)
@@ -51,15 +45,13 @@ void Task::splitDueDate()
 
 bool Task::isValidTime()
 {
-    setCurrentDate();
-
-    if (CurrentYear < DueYear)
+    if (date.getYear() < DueYear)
         return true;
 
-    else if ((CurrentYear = DueYear) && (CurrentMonth < DueMonth))
+    else if ((date.getYear() == DueYear) && (date.getMonth() < DueMonth))
         return true;
 
-    else if ((CurrentMonth = DueMonth) && (CurrentDay <= DueDay))
+    else if ((date.getMonth() == DueMonth) && (date.getDay() <= DueDay))
         return true;
 
     return false;
