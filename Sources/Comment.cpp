@@ -29,5 +29,6 @@ void Comment::display(Student*, Instructor*, int, int) const
 
 void Comment::CheckPrivate()
 {
-
+	if (!isPrivate)
+		return;
 }
