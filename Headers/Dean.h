@@ -4,26 +4,24 @@
 #include "Member.h"
 #include "Department.h"
 
-
 class Dean : public Member
 {
 protected:
-	Department* department_ptr = nullptr; // pointer to the department object
-	vector <Course> courses;
+	Department *department_ptr = nullptr; // pointer to the department object
+	vector<Course> courses;
 	void createDepartment();
 
 public:
 	Dean();
-	Dean(string name, char s, 
-	string role, string nationalID , 
-	vector <Course> courses );
-		
-	void setDepartment(Department & department);
+	Dean(string name, char s,
+		 string role, string nationalID,
+		 vector<Course> courses);
+
+	void setDepartment(Department &department);
 	void addCourse(Course);
-	void displayCourses(vector <Course>);
+	void displayCourses(vector<Course>);
 	void deleteCourse(Course);
 	void showDepartment();
 	string Dean::call_getName();
-	Department* getDepartment();
+	Department *getDepartment();
 };
-
