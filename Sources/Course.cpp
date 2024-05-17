@@ -7,14 +7,13 @@ using namespace std;
 // Constructors___________________________________________________________________-
 // Control + shift + P
 
-Course::Course()
-    : Title("\0"), instructor("\0"), Code("\0"), Prerequisete("\0"),
-      CreditHours(0), Section(0), TimeSlot("\0"), Day("\0"), Place("\0") {
-  // Initializer list is executable before default constructor so it has the
-  // priority to be executed firstly and it's better and has more features and
-  // it can be used to initialize the object with some constant values or
-  // refrences
-}
+	Course::Course(string Title="", string instructor="",
+	 string Code="", string Prerequisete="",
+	 unsigned int CreditHours = 0, 
+	 unsigned int Section = 0, string TimeSlot ="",
+	 string Day = "", string Place = "") : Title(Title), instructor(instructor), Code(Code), 
+	 Prerequisete(Prerequisete), CreditHours(CreditHours), Section(Section), 
+	 TimeSlot(TimeSlot), Day(Day), Place(Place) {};
 
 // Setters____________________________________________________________________
 void Course::setTitle(string title) {
@@ -59,63 +58,31 @@ void Course::setInstructor(string Instructor_name) {
 }
 
 void Course::setCode(string course_code) {
-  /*
-  unsigned int num_of_courses{0};
-  string temp_course_code;
-  cout<<"Enter No. of Course codes you will enter"; cin>>num_of_courses;
-  for(int iterator{0}; iterator<num_of_courses;iterator++){
-      cout<<"Enter Course Code : "; cin>>temp_course_code;
-      course_code.push_back(temp_course_code);
-  }*/
+
   string Code = course_code;
 }
 void Course::setPrerequisete(string prerequisetes) {
-  /*
-  int prerequisete_length = Code.size();
-  string temp_prerequisete;
-  for(int iterator{0}; iterator<prerequisete_length;iterator++){
-      cout<<"Enter Prerequisete : if there's no prerequisete enter 'nan'\n";
-cout<<Code[iterator]<<" "; cin>>temp_prerequisete;
-      prerequisetes.push_back(temp_prerequisete);
-  }Prerequisete = prerequisetes;
-  }
-void Course::setCreditHours(unsigned int CreditHours,vector<string> Code){
-  int *array{ new int[Code.size()]};
-  for(int iterator{0}; iterator<Code.size();iterator++){
-      cout<<"Enter Credit Hours :  ";  cout<<Code.at(iterator)<<"  ";
-cin>>array[iterator]; } */
+
   Prerequisete = prerequisetes;
 }
-void Course::setCreditHours(unsigned int section, vector<string> Code)
-{
+void Course::setCreditHours(unsigned int CreditHoursvector) {
+
+    CreditHours = CreditHoursvector;
 }
+
+
+
 void Course::setSection(unsigned int sectionvector) {
-  // int *section_array = new int[Code.size()];
-  /*
-  int num_of_courses = Code.size();
-  int temp_num_of_section {0};
-  for(int iterator{0}; iterator<num_of_courses;iterator++){
-      cout<<"Enter Section :  "; cout<<Code.at(iterator)<<"  "<<"Section";
-  cin>>temp_num_of_section; sectionvector.push_back(temp_num_of_section);*/
+
   if (sectionvector != 0) {
     Section = sectionvector;
   }
 }
 
-// int Section[num_of_courses];
-/*
-for (int iterator1{0}; iterator1 <num_of_courses; iterator1++)
- {int Section[iterator1] = section_array[iterator1];}*/
+
 
 void Course::setPlace(string Placevector) {
-  /*
-  int num_of_courses = Code.size();
-  string temp_place;
-  for(int iterator{0}; iterator<num_of_courses;iterator++){
-      cout<<"Enter Place :  "; cout<<Code.at(iterator)<<"  "; cin>>temp_place;
-  Placevector.push_back(temp_place);
-      }*/
-  Place = Placevector;
+Place = Placevector;
 }
 
 void Course::setDay(string temp_day) {
@@ -149,13 +116,6 @@ void Course::setTime(string time) {
     setTime(time);
   }
 
-  /*
-   for (int iterator0 = 0; iterator0 < len_of_classes_vector; iterator0++){
-          for (int time_index{0}; time_index < 7; time_index++){
-      cout<<time[time_index]<<time[time_index+1]<<endl;
-      cout<<"Enter slot with index "<<time_index+1<<" "; cin>>time[time_index];}
-      Timevector.push_back(time[iterator0]);
-  } */
 }
 
 void Course::display() {

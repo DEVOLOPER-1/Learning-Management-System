@@ -3,6 +3,7 @@
 #include "Instructor.h"
 #include <string>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 // Constructors____________________________________________________________________
@@ -61,10 +62,17 @@ void Department::addToStuff( Instructor &instructor){
 
 void Department::display()
 {
-  cout << "Name: " << Name << endl;
-  cout << "Dean: " << Dean_Name << endl;
+  cout << setw(10) << Name << setw(10) << '\n\n' << endl;
+  cout << setw(10) << Dean_Name << setw(10) << endl;
+  cout << setw(10) <<" ~ " << "Majors"<< " ~ "<< setw(10) << endl;
+  for (auto new_major : Majors)
+  {
+    cout << setw(10) << new_major << setw(10) << " ";
+  }
+    cout << endl;
+    cout << setw(10) <<" ~ " << "Instructors"<< " ~ "<< setw(10) << endl;
 
-  cout << "Majors: " ; for(auto i : Majors){cout << i << " ";}
+
 }
 
 // Getters________________________________________________________________________

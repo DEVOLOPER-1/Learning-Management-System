@@ -20,9 +20,11 @@ private:
 public:
 	// Constructors________________________________________________________________
 	Course();
-	// Course(string Title, string instructor, string Code, string Prerequisete,
-	// unsigned int CreditHours, unsigned int Section, string TimeSlot, string
-	// Day, string Place);
+	Course(string Title, string instructor,
+	 string Code, string Prerequisete,
+	 unsigned int CreditHours , 
+	 unsigned int Section , string TimeSlot ,
+	 string Day , string Place ) ;
 
 	// Setters________________________________________________________________
 	void setTitle(string title);
@@ -40,7 +42,7 @@ public:
 
 	// Getters__________________________________________________________________
 	string getTitle();
-	// Instructor getInstructor();
+	Instructor getInstructor();
 	string getCode();
 	string getPrerequisete();
 	string getPlace();
