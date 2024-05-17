@@ -4,7 +4,7 @@
 // Constructors
 Comment::Comment() : Comment("", "", false) {}
 
-Comment::Comment(string content, string date, bool isPrivate) : content(content), date(date), replies(replies), isPrivate(isPrivate)
+Comment::Comment(string content, string date, bool isPrivate) : content(content), date(date), replies(), isPrivate(isPrivate)
 {
 }
 
