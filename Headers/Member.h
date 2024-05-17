@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Petition.h"
+
 using namespace std;
 
 int Member::Counter = 0;

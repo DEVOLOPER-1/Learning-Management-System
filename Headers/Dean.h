@@ -7,17 +7,22 @@
 
 class Dean : public Member
 {
-private:
-	string DepartmentName;
+protected:
+	Department* department_ptr = nullptr; // pointer to the department object
 	vector <Course> courses;
 	void createDepartment();
 
 public:
-	void setDepartment(Department);
+	Dean(string name, char s, 
+	string role, string nationalID , 
+	vector <Course> courses );
+		
+	void setDepartment(Department & department);
 	void addCourse(Course);
 	void displayCourses(vector <Course>);
 	void deleteCourse(Course);
-	Department getDepartment();
 	void showDepartment();
+	string Dean::call_getName();
+	Department* getDepartment();
 };
 

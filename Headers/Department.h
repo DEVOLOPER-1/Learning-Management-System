@@ -9,18 +9,20 @@ using namespace std;
 class Department
 {
 private:
+	Dean* dean_ptr = nullptr;
 	string Name;
 	vector <string> Majors;
 	//vector <Instructor> Staff;
 	string Dean_Name;
+	void createDean();
 public:
 //Constructors____________________________________________________________________
-
 Department();
+Department(string name, string dean_name, vector <string> majors  );
 
 
 //Setters__________________________________________________________________________
-	void setDean(string);
+	void settingDean(Dean & dean);
 	void setName(string);
 	void addMajor(string);
 	void addToStuff(Instructor);
@@ -29,7 +31,7 @@ Department();
 
 //Getters__________________________________________________________________________
 	string getName();
-	string getDean_Name();	
+	Dean* getDean();
 	vector <string> getMajors();
 	//vector <Instructor> getStaff();
 };
