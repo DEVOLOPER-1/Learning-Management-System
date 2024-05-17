@@ -13,6 +13,7 @@ protected:
 	void createDepartment();
 
 public:
+	Dean();
 	Dean(string name, char s, 
 	string role, string nationalID , 
 	vector <Course> courses );
