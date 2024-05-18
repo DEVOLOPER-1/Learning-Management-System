@@ -19,7 +19,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/../**",
-                "/media/mohamed/Mom0-0/Code/nana/include"
+                "/media/mohamed/Mom0-0/Code/wxWidgets-3.2.5/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

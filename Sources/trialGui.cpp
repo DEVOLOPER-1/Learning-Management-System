@@ -1,7 +1,7 @@
-#include <wx/wxprec.h>  // For precompiled headers
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
+// #include <wx/wxprec.h>  // For precompiled headers
+// #ifndef WX_PRECOMP
+#include <wx/wx.h>
+// #endif
 
 class MyApp : public wxApp {
 public:
