@@ -67,7 +67,7 @@ void Course::setPrerequisete(string prerequisetes) {
 }
 void Course::setCreditHoursandsection(vector<string> section, vector<string> hours) {
 
-    for ( int elementsiterator =0; elementsiterator <  hours.size()-1 , elementsiterator++) {
+    for ( int elementsiterator =0; elementsiterator <  hours.size()-1 ; elementsiterator++) {
       CreditHours.push_back(hours[elementsiterator]);
       Section.push_back(section[elementsiterator]);
     }

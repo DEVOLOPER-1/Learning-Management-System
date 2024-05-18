@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int Member::Counter = 0;
+long int Member::Counter = 0;
 class Member
 {
 protected:
