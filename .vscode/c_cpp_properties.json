@@ -19,7 +19,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/../**",
-                "/media/mohamed/Mom0-0/Code/nana/**"
+                "/media/mohamed/Mom0-0/Code/nana/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
