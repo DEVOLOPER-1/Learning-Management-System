@@ -1,47 +1,43 @@
 #include "Comment.h"
-#include <ctime>
+#include <iostream>
 #include <string>
-// Constructors
+using namespace std;
 
+Comment::Comment(string Comment_Author, string content, vector<Reply*> replies) : Message(Comment_Author, content), replies(replies) {}
 
-// Seters
+void Comment::addReply(Reply* reply) { replies.push_back(reply); }
 
-
-void Comment::setDate()
+void Comment::removeReply(Reply* reply)
 {
-    string CurrentDay, CurrentMonth, CurrentYear, CurrentDate;
-    time_t t = time(0);                 // get current time
-    tm* CurrentTimePtr = localtime(&t);
-    CurrentDay = CurrentTimePtr->tm_mday;
-    CurrentMonth = (CurrentTimePtr->tm_mon + 1) + "/";
-    CurrentYear = (CurrentTimePtr->tm_year + 1900) + "/";
-    CurrentDate = CurrentDay + CurrentMonth + CurrentYear;
+	for (int i = 0; i < replies.size(); i++)
+	{
+		if (replies.at(i) == reply)
+		{
+			replies.erase(replies.begin() + i);
+			break;
+		}
+	}
 }
 
-void Comment::CheckPrivate()
+void Comment::setReplies(vector<Reply*> replies) { this->replies = replies; }
+
+vector<Reply*> Comment::getReplies() { return replies; }
+
+void Comment::display()
 {
+	cout << getAuthor() << " commented: " << getContent() << endl;
+	cout << "| Date: " << date->getDate() << endl;
+	for (int i = 0; i < replies.size(); i++)
+	{
+		replies.at(i)->display();
+	}
+	cout << "--------------------------------\n\n";
 }
 
-void Comment::setContent(string Content)
+Comment::~Comment()
 {
-	this->Content = Content;
+	for (int i = 0; i < replies.size(); i++)
+	{
+		delete replies.at(i);
+	}
 }
-
-void Comment::reply(Comment)
-{
-}
-
-vector<Comment> Comment::getReplies()
-{
-	return vector<Comment>();
-}
-
-// Geters
-string Comment::getContent() const {return Content;}
-string Comment::getDate() const{return Date;}
-void Comment::display(Student*, Instructor*, int, int) const
-{
-}
-vector<Comment> Comment::getReplies() const {return Replies;}
-// Other
-

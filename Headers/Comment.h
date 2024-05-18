@@ -1,25 +1,21 @@
 #pragma once
-#include <iostream>
+#include "Message.h"
+#include "Reply.h"
 #include <vector>
-#include "Student.h"
+#include <string>
+using namespace std;
 
-class Comment
+class Comment : public Message
 {
 private:
-	string Content;
-	string Date;
-	vector <Comment> Replies;
-	bool isPrivate;
-	void CheckPrivate();
+	vector<Reply*> replies;
 public:
-	Comment();
-	Comment(string);
-	void setDate();
-	void setContent(string);
-	void reply(Comment);
-	vector <Comment> getReplies();
-	string getContent() const;
-	string getDate() const;
-	void display(Student*, Instructor*, int, int) const;
+	Comment(string Comment_Author, string content, vector<Reply*> replies);
+	void addReply(Reply* reply);
+	void removeReply(Reply* reply);
+	void setReplies(vector<Reply*> replies);
+	vector<Reply*> getReplies();
+	void display();
+	~Comment();
 };
 
