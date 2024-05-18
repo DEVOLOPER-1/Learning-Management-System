@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Reply.cpp" />
     <ClCompile Include="Sources\Message.cpp" />
     <ClCompile Include="Sources\Date.cpp" />
     <ClCompile Include="Sources\Meeting.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Headers\Task.h" />
     <ClInclude Include="Headers\Meeting.h" />
     <ClInclude Include="Headers\Message.h" />
+    <ClInclude Include="Headers\Reply.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
