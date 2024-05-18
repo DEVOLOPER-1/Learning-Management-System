@@ -1,36 +1,15 @@
-#include <wx/wxprec.h>  // For precompiled headers
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
+// https://github.com/qPCR4vir/nana-docs/wiki/Getting-Started
 
-class MyApp : public wxApp {
-public:
-    virtual bool OnInit() override {
-        // Create and show the main frame (window)
-        MyFrame* frame = new MyFrame();
-        frame->Show(true);
-        return true;
-    }
-};
+// #include <nana/gui/wvl.hpp>
+#include <nana/gui/widgets/label.hpp>
+using namespace nana;
 
-class MyFrame : public wxFrame {
-public:
-    MyFrame() : wxFrame(nullptr, -1, "My Button App") {
-        // Create a button
-        wxButton* button = new wxButton(this, wxID_ANY, "Click Me!");
-
-        // Connect the button click event to a function
-        button->Bind(wxEVT_BUTTON, &MyFrame::OnButtonClick, this);
-    }
-
-private:
-    void OnButtonClick(wxCommandEvent& event) {
-        // This function will be called when the button is clicked
-        wxMessageBox("The button was clicked!");
-    }
-};
-
-int main() {
-    wxApp application;  // Create an instance of the application object
-    return wxApp::MainLoop();  // Start the event loop and run the application
+int main()
+{
+    using namespace nana;
+    form fm;
+    label lb(fm, fm.size());
+    lb.caption(STR("Hello, World"));
+    fm.show();
+    exec();
 }
