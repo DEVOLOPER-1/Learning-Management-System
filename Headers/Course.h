@@ -11,8 +11,8 @@ private:
 					   // courses codes
 	string Code;
 	string Prerequisete;
-	unsigned int CreditHours;
-	unsigned int Section;
+	vector <string> CreditHours;
+	vector <string> Section;
 	string TimeSlot;
 	string Day;
 	string Place;
@@ -22,8 +22,8 @@ public:
 	Course();
 	Course(string Title, string instructor,
 	 string Code, string Prerequisete,
-	 unsigned int CreditHours , 
-	 unsigned int Section , string TimeSlot ,
+	 vector <string> CreditHours , 
+	  vector<string> Section, string TimeSlot ,
 	 string Day , string Place ) ;
 
 	// Setters________________________________________________________________
@@ -32,8 +32,7 @@ public:
 	void setCode(string course_code);
 	// void CreditHours(unsigned int CreditHours, vector<string> Code);
 	void setPrerequisete(string prerequisetes);
-	void setCreditHours(unsigned int section, vector<string> Code);
-	void setSection(unsigned int sectionvector);
+	void setCreditHoursandsection(vector<string> section, vector<string> hours);
 	void setPlace(string Placevector);
 	void setTime(string time);
 	void setDay(string temp_day);
@@ -42,11 +41,11 @@ public:
 
 	// Getters__________________________________________________________________
 	string getTitle();
-	Instructor getInstructor();
+	string getInstructor();
 	string getCode();
 	string getPrerequisete();
 	string getPlace();
-	unsigned int getCreditHours();
+	vector <string> getCreditHoursandsection();
 	unsigned int getSection();
 	string getTime();
 	string getDay();

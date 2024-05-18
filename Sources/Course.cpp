@@ -9,8 +9,8 @@ using namespace std;
 
 	Course::Course(string Title="", string instructor="",
 	 string Code="", string Prerequisete="",
-	 unsigned int CreditHours = 0, 
-	 unsigned int Section = 0, string TimeSlot ="",
+	 vector <string> CreditHours = {}, 
+	  vector<string> Section = {}, string TimeSlot ="",
 	 string Day = "", string Place = "") : Title(Title), instructor(instructor), Code(Code), 
 	 Prerequisete(Prerequisete), CreditHours(CreditHours), Section(Section), 
 	 TimeSlot(TimeSlot), Day(Day), Place(Place) {};
@@ -65,19 +65,16 @@ void Course::setPrerequisete(string prerequisetes) {
 
   Prerequisete = prerequisetes;
 }
-void Course::setCreditHours(unsigned int CreditHoursvector) {
+void Course::setCreditHoursandsection(vector<string> section, vector<string> hours) {
 
-    CreditHours = CreditHoursvector;
+    for ( int elementsiterator =0; elementsiterator <  hours.size()-1 , elementsiterator++) {
+      CreditHours.push_back(hours[elementsiterator]);
+      Section.push_back(section[elementsiterator]);
+    }
 }
 
 
 
-void Course::setSection(unsigned int sectionvector) {
-
-  if (sectionvector != 0) {
-    Section = sectionvector;
-  }
-}
 
 
 
@@ -123,8 +120,11 @@ void Course::display() {
   cout << setw(10) << instructor << setw(10) << endl;
   cout << setw(10) << Code << setw(10) << endl;
   cout << setw(10) << Prerequisete << setw(10) << endl;
-  cout << setw(10) << CreditHours << setw(10) << endl;
-  cout << setw(10) << Section << setw(10) << endl;
+  cout << setw(10) << " Credit Hours  & Sections" << setw(10) << endl;
+  for (int i = 0; i < CreditHours.size()-1; i++)
+  {
+    cout << setw(10) << CreditHours[i] << setw(10) << " Section : " << Section[i+1] << endl;
+  }
   cout << setw(10) << TimeSlot << setw(10) << endl;
   cout << setw(10) << Day << setw(10) << endl;
   cout << setw(10) << Place << setw(10) << endl;
@@ -135,8 +135,8 @@ void Course::Delete() {
   instructor = '/0';
   Code = '/0';
   Prerequisete = '/0';
-  CreditHours = 0;
-  Section = 0;
+  CreditHours = {};
+  Section = {};
   TimeSlot = '/0';
   Day = '/0';
   Place = '/0';
@@ -145,16 +145,15 @@ void Course::Delete() {
 // Getters______________________________________________________________________________
 string Course::getTitle() { return Title; }
 
-// Instructor::getInstructor(){return instructor;} //Instructor getInstructor()
+string Course::getInstructor(){return instructor;} 
 // Errrorrr
 
 string Course::getCode() { return Code; }
 
 string Course::getPrerequisete() { return Prerequisete; }
 
-unsigned int Course::getCreditHours() { return CreditHours; }
+vector<string> Course::getCreditHoursandsection() { return CreditHours , Section; }
 
-unsigned int Course::getSection() { return Section; }
 
 string Course::getPlace() { return Place; }
 
