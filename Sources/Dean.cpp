@@ -64,4 +64,8 @@ Course *Dean::getCourse()
 void Dean::showPetition(Petition &petition)
 {
 	petition_ptr->getContent();
+	petition_ptr->getDepartment();
+	petition_ptr->getDean();
+	petition_ptr->getStudent();
+	petition_ptr->setStatus(true);
 }

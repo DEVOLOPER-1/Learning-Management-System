@@ -18,28 +18,11 @@ void Petition::setDepartment(Department &department)
   department_ptr = &department;
 }
 void Petition::setStatus(bool seen) {
-  string statu_array[]{"Pending", "Done"};
-  // bool seen{false};
-  if (seen == false) {
-    string status = statu_array[0];
-  }
-  if (seen == true) {
-    string status = statu_array[1];
-  }
+  seen = true;
 }
 
-void Petition::checkSatus() {
-  string approve[]{"Yes", "No"};
-  if (isApproved == approve[0]) {
-    cout << isApproved << endl;
-  }
-  if (isApproved == approve[1]) {
-    cout << isApproved << endl;
-  }
-
-  else {
-    cout << "Neither 'Approved' nor 'Not Approved' ";
-  }
+bool Petition::checkSatus(bool seen ) {
+  return seen;
 }
 
 void Petition::setTitle(string Titl) {

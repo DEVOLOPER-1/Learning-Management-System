@@ -27,8 +27,7 @@ private:
   Student* student_ptr = nullptr;
   Department* department_ptr = nullptr;
   string Title, Content, isApproved, status;
-  void setStatus(bool seen);
-  void checkSatus();
+
   
 public:
   // Setters______________________________________________________________________
@@ -37,6 +36,8 @@ public:
   void setDepartment(Department & department);
   void setTitle(string);
   void setContent(string);
+  void setStatus(bool seen);
+  bool checkSatus(bool seen);
   void request();
   // void display(Dean, Student);
 
