@@ -3,20 +3,16 @@
 #include <vector>
 #include <ctime>
 #include "Comment.h"
+#include "Message.h"
 
-class Announcement
+class Announcement :public Message
 {
 private:
-	string Content;
-	string Date;
-	int CurrentDay, CurrentMonth, CurrentYear;
-	vector<Comment> Comments;
-	void setDate(time_t time);
+	vector<Comment*> Comments;
 public:
-	void setContent(string);
-	void publish();
-	string getContent();
-	time_t getDate();
 	void display();
-	void deleteAnnouncement();
+	void addComment(Comment* Comment);
+	void removeComment(Comment* comment);
+	void setComments(vector<Comment*> Comments);
+	vector<Comment*> getComments();
 };
