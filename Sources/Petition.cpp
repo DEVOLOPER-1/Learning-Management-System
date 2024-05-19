@@ -13,7 +13,7 @@ void Petition::setDean(Dean &dean){
   dean_ptr = &dean;
 }
 
-void Dean::setDepartment(Department &department)
+void Petition::setDepartment(Department &department)
 {
   department_ptr = &department;
 }
@@ -91,6 +91,7 @@ string Petition::getTitle() { return Title; }
 string Petition::getContent() { return Content; }
 Dean *Petition::getDean() { return dean_ptr; }
 Student *Petition::getStudent() { return student_ptr; }
+Department *Petition::getDepartment() { return department_ptr; }
 /* Content Sample Petition
 This petition is for discussing the various changes in the syllabus of various
 courses without any declaration for the students

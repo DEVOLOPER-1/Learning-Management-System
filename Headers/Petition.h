@@ -25,6 +25,7 @@ class Petition {
 private:
   Dean* dean_ptr = nullptr;
   Student* student_ptr = nullptr;
+  Department* department_ptr = nullptr;
   string Title, Content, isApproved, status;
   void setStatus(bool seen);
   void checkSatus();
@@ -33,7 +34,7 @@ public:
   // Setters______________________________________________________________________
   void setDean(Dean & dean);
   void setStudent(Student & student);
-
+  void setDepartment(Department & department);
   void setTitle(string);
   void setContent(string);
   void request();
@@ -44,9 +45,9 @@ public:
   string getContent();
   Dean* getDean();
   Student* getStudent();
-
+  Department* getDepartment();
   // Friends.........................................
-  friend class Member; // The friend relationship is made by youssef and it's to
+   // The friend relationship is made by youssef and it's to
                        // access the the role string and if it's a dean the
                        // petition status will be changed upon it.
 };
