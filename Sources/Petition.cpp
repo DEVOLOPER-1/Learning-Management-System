@@ -8,6 +8,15 @@ using namespace std;
 
 // Setter Methods
 
+void Petition::setDean(Dean &dean){
+
+  dean_ptr = &dean;
+}
+
+void Dean::setDepartment(Department &department)
+{
+  department_ptr = &department;
+}
 void Petition::setStatus(bool seen) {
   string statu_array[]{"Pending", "Done"};
   // bool seen{false};
@@ -76,18 +85,12 @@ void Petition::setContent(string Conten) {
   }
 }
 
-void Petition::decide(Member &check_member_role) {
-  bool seen;
-  if (check_member_role.Role == "dean") {
-    setStatus(seen == true);
-    // bool seen == true;
-  }
-}
 
 // Getter Methods
 string Petition::getTitle() { return Title; }
 string Petition::getContent() { return Content; }
-
+Dean *Petition::getDean() { return dean_ptr; }
+Student *Petition::getStudent() { return student_ptr; }
 /* Content Sample Petition
 This petition is for discussing the various changes in the syllabus of various
 courses without any declaration for the students

@@ -8,8 +8,9 @@ class Dean : public Member
 {
 protected:
 	Department *department_ptr = nullptr; // pointer to the department object
+	Petition *petition_ptr = nullptr;
+	Course *course_ptr = nullptr;
 	vector<Course> courses;
-	void createDepartment();
 
 public:
 	Dean();
@@ -18,10 +19,16 @@ public:
 		 vector<Course> courses);
 
 	void setDepartment(Department &department);
+	void setPetition(Petition  &petition);
+	void setCourse(Course &course);
 	void addCourse(Course);
-	void displayCourses(vector<Course>);
+	void displayCourses( Course&course );
 	void deleteCourse(Course);
-	void showDepartment();
+	void showDepartment(Department &department);
+	void showPetition(Petition &petition);
+
 	string Dean::call_getName();
 	Department *getDepartment();
+	Petition *getPetition();
+	Course *getCourse();
 };

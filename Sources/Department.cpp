@@ -10,14 +10,7 @@ using namespace std;
 Department::Department(string name, string dean_name = "", vector<string> majors = {}) : Name(name), Dean_Name(dean_name), Majors(majors){};
 // Setters____________________________________________________________________________
 
-void Department::createDean()
-{
 
-  // Creating  a new Dean object
-  Dean *newDean = new Dean();
-  // Associating new dean with department object
-  dean_ptr = newDean;
-}
 void Department::settingDean(Dean &dean)
 {
   dean_ptr = &dean;

@@ -8,16 +8,6 @@ Dean::Dean(string name = "", char s = '\0',
 										  courses(courses),
 										  department_ptr(nullptr){};
 
-void Dean::createDepartment()
-{
-	// Creating  a new Department object
-	Department *newDepartment = new Department();
-	// Associating new department with dean object
-	department_ptr = newDepartment;
-
-	// department_ptr->setDean(call_getName());
-}
-
 string Dean::call_getName()
 {
 	Member::getName();
@@ -29,16 +19,27 @@ void Dean::setDepartment(Department &department)
 	// Department object that was passed as a reference to the setDepartment method
 }
 
-void Dean::addCourse(Course)
+void Dean::setPetition(Petition &petition)
 {
+	petition_ptr = &petition;
 }
 
-void Dean::displayCourses(vector<Course>)
+void Dean::setCourse(Course &course){
+	course_ptr = &course;
+}
+void Dean::addCourse(Course)
 {
+
+}
+
+void Dean::displayCourses(Course &course )
+{
+	course_ptr->display();
 }
 
 void Dean::deleteCourse(Course)
 {
+
 }
 
 Department *Dean::getDepartment()
@@ -46,7 +47,19 @@ Department *Dean::getDepartment()
 	return department_ptr;
 }
 
-void Dean::showDepartment()
+Petition *Dean::getPetition()
+{
+	return petition_ptr;
+}
+void Dean::showDepartment(Department &department)
 {
 	department_ptr->display();
+}
+Course *Dean::getCourse()
+{
+	return course_ptr;
+}
+void Dean::showPetition(Petition &petition)
+{
+	petition_ptr->getContent();
 }

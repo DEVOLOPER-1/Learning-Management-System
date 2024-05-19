@@ -15,7 +15,6 @@ private:
 	vector<string> Majors;
 	vector <Instructor> Staff;
 	string Dean_Name;
-	void createDean();
 
 public:
 	// Constructors____________________________________________________________________

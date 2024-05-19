@@ -23,21 +23,27 @@ using namespace std;
 
 class Petition {
 private:
+  Dean* dean_ptr = nullptr;
+  Student* student_ptr = nullptr;
   string Title, Content, isApproved, status;
   void setStatus(bool seen);
   void checkSatus();
-
+  
 public:
   // Setters______________________________________________________________________
+  void setDean(Dean & dean);
+  void setStudent(Student & student);
+
   void setTitle(string);
   void setContent(string);
   void request();
   // void display(Dean, Student);
-  void decide(Member &check_member_role);
 
   // Getters______________________________________________________________________
   string getTitle();
   string getContent();
+  Dean* getDean();
+  Student* getStudent();
 
   // Friends.........................................
   friend class Member; // The friend relationship is made by youssef and it's to
