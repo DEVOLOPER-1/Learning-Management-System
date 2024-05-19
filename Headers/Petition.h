@@ -27,9 +27,12 @@ private:
   Student* student_ptr = nullptr;
   Department* department_ptr = nullptr;
   string Title, Content, isApproved, status;
+  bool seeen;
 
   
 public:
+  Petition();
+  Petition(string, string, string, string );
   // Setters______________________________________________________________________
   void setDean(Dean & dean);
   void setStudent(Student & student);
