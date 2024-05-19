@@ -7,12 +7,10 @@ using namespace std;
 class Schedule
 {
 private:
-	const string DayArr[7];
-	vector <string> CourseName, Time, Place;
-
+	string DayArr[6];
+	vector<Course*> Courses;
 public:
-	Schedule();
-	Schedule(vector <Course>);
+	Schedule(vector <Course*>);
 	void dispaly();
 };
 

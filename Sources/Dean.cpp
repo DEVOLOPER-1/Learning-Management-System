@@ -2,11 +2,13 @@
 #include "Member.h"
 
 // Delegate Constructor
-Dean::Dean():Dean(string name = "", char s = '\0',
-		   string role = "", string nationalID = "",
-		   vector<Course> courses = {}) : Member(name, s, role, nationalID),
-										  courses(courses),
-										  department_ptr(nullptr){};
+Dean::Dean() : Dean("", '\0', "", "", {}) {}
+
+Dean::Dean(string name, char s,
+	string role, string nationalID,
+	vector<Course> courses) : Member(name, s, role, nationalID),
+	courses(courses),
+	department_ptr(nullptr) {};
 
 string Dean::call_getName()
 {
