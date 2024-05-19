@@ -1,35 +1,28 @@
-#pragma once
-#include <iostream>
+#pragma 
+#include <string>
 #include <vector>
-#include "Classroom.h"
-#include "Assignment.h"
-#include "Course.h"
-#include "Dashboard.h"
-/*
-- year: int
-- registered: vector<Classroom>
-- request_course : string
-- assigns: vector<Assignment>
-+ openDashboard(das:Dashboard)
-- openClassroom(classroom: Classrom)
-+ registerCourse(course: Course)
-*/
+#include "Task.h"
+using namespace std;
 
 class Student
 {
 private:
-	Petition * petition_ptr = nullptr;
-	int year;
-	vector<Classroom> RegisteredCourese;
-	string request_course; //need to be clarified more
-	vector<Assignment*> assignments;
-	Classroom openClassroom(Classroom);
+	string Name, ID;
+	vector<Task*> Tasks;
+	Task* getTask(int position);
+	void removeTask(int position);
 public:
-	void openDashboard(Dashboard);
-	void registerCourse(Course);
-	vector <Assignment*> getStudentAssignments();             // i need it in the assign function for instructor
-	void setpetitionptr(Petition  &petition);
-	void display();  
-	Petition * getpetitionptr();                                        // i need it in grading function
+	Student();
+	Student(string Name, string ID);
+	Student(string Name, string ID, vector<Task*> Tasks);
+	void setName(string Name);
+	void setID(string ID);
+	void setTasks(vector<Task*> Tasks);
+	void addTask(Task* task);
+	void updateTask(int position, int action);
+	void displayTasks();
+	string getName() const;
+	string getID() const;
+	vector<Task*> getTasks() const;
+	~Student();
 };
-
