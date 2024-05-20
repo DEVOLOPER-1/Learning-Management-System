@@ -4,10 +4,10 @@
 
 using namespace std;
 
-long int Member::Counter = 0;
+// long int Member::Counter = 0;
 class Member
 {
-protected:
+private:
 	// Variables..............................................
 	string Name, NationalID, Uni_ID, Mail, Role;
 	char Sex;
@@ -29,9 +29,6 @@ public:
 	void setNational_ID(string);
 	void setRole(string );
 	void setName(string);
-	void setSex(char);
-	void setNational_ID(string);
-	void setRole(string);
 
 	// Geters................................................
 	string getName() const;
@@ -44,6 +41,4 @@ public:
     void display() const;
     
     
-  // Friends.........................................
-    friend class Petition; //The friend relationship is made by youssef and it's to access the the role string and if it's a dean the petition status will be changed upon it.
 };

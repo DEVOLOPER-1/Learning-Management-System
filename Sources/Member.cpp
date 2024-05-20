@@ -3,6 +3,7 @@
 using namespace std;
 #include "Member.h"
 
+long int Member::Counter = 0;
 // constructor
 Member::Member() 
 {
