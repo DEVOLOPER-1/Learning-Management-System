@@ -18,8 +18,7 @@
             "name": "linux-g++-x64",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/../**",
-                "/media/mohamed/Mom0-0/Code/wxWidgets-3.2.5/include"
+                "${workspaceFolder}/../**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
